@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/feedback.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
+			<h1 class="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<div class="green-bj"></div>
+			<div class="form">
+				<h2>Feedback Type</h2>
+				<div class="radio-box" id="radio-box"> 
+					<div class="mui-input-row mui-radio mui-left radio">
+					    <label>Radio</label>
+					    <input name="radio" checked = "checked" type="radio" value="1" class="iconfont">
+					</div>
+					<div class="mui-input-row mui-radio mui-left radio">
+					    <label>Radio</label>
+					    <input name="radio" value="2" type="radio" class="iconfont">
+					</div>
+					<div class="mui-input-row mui-radio mui-left radio">
+					    <label>Radio</label>
+					    <input name="radio" type="radio" value="3" class="iconfont">
+					</div>
+					<div class="mui-input-row mui-radio mui-left radio">
+					    <label>Radio</label>
+					    <input name="radio" type="radio" value="4" class="iconfont">
+					</div> 
+				</div>
+			</div>
+			<div class="text-area">
+				<textarea name="" rows="" cols="" maxlength="200" class="feedback-word" id="feedback-word"></textarea>
+				<label class="tip" for="feedback-word">Write down your comments or suggestions...</label>
+				<span class="total">200</span>
+			</div>
+			<button type="button" class="mui-btn submit" id="submit">Submit Feedback</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/feedback.js" type="text/javascript" charset="UTF-8"></script>
+		
+	</body>
+
+</html>

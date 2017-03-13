@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myevents.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
+			<h1 class="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<div class="accordtions">
+				<div class="accordtion-item">
+					<div class="accordtion-title">
+						<span class="icon happening-icon"><img src="images/happening.png"/></span>
+						Happening
+					</div>
+					<div class="accordtion-body">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell mui-media accordtion-list">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						    <li class="mui-table-view-cell mui-media">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						    <li class="mui-table-view-cell mui-media">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						</ul>
+						<div class="pick-up">Pack Up <span class="mui-icon mui-icon-arrowup"></span></div>
+					</div>
+				</div>
+				<div class="accordtion-item">
+					<div class="accordtion-title">
+						<span class="icon happening-icon"><img src="images/upcoming.png"/></span>
+						Upcoming
+					</div>
+					<div class="accordtion-body">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell mui-media accordtion-list">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						    <li class="mui-table-view-cell mui-media">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						    <li class="mui-table-view-cell mui-media">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						</ul>
+						<div class="pick-up">Pack Up <span class="mui-icon mui-icon-arrowup"></span></div>
+					</div>
+				</div>
+				<div class="accordtion-item">
+					<div class="accordtion-title">
+						<span class="icon past-icon"><img src="images/past.png"/></span>
+						Past
+					</div>
+					<div class="accordtion-body">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell mui-media accordtion-list">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						    <li class="mui-table-view-cell mui-media">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						    <li class="mui-table-view-cell mui-media">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="images/myevents-img.jpg">
+						            <div class="mui-media-body">
+						                <p class="title">Global Internet architecture Conference</p>
+						                <p class="date">2016.12.16</p>
+						            </div>
+						        </a>
+						    </li>
+						</ul>
+						<div class="pick-up">Pack Up <span class="mui-icon mui-icon-arrowup"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			$(function(){
+				$(".accordtions .accordtion-item:first").find(".accordtion-body").show().end().siblings().find(".accordtion-body").hide();
+			});
+
+			mui("body").on("tap",".accordtion-title",function(){
+				$(".accordtion-item .accordtion-body").slideUp(300);
+				$(this).next().slideDown();
+			});
+			mui("body").on("tap",".pick-up",function(){
+				$(this).parent().slideUp();
+			});
+		</script>
+	</body>
+
+</html>

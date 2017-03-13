@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myevents.css"/>
+		<style type="text/css">
+			html,body{ background: #e6e6e6;}
+			.mui-content{ background: #e6e6e6; padding-bottom: 1rem;}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
+			<h1 class="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<div class="green-bj"></div>
+			<div class="nav-list">
+				<div class="item" id="events"><span class="icon"><img src="images/icon-m.png"/></span>My Events</div>
+				<div class="item" id="contacts"><span class="icon"><img src="images/icon-m.png"/></span>My Contacts</div>
+				<div class="item" id="cv"><span class="icon"><img src="images/icon-c.png"/></span>CV</div>
+				<div class="item" id="updateprofile"><span class="icon"><img src="images/icon-u.png"/></span>Update Profile</div>
+				<div class="item" id="feedback"><span class="icon"><img src="images/icon-f.png"/></span>Feedback</div>
+				<div class="item" id="exit"><span class="icon"><img src="images/icon-e.png"/></span>Exit</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var exit=document.getElementById("exit"),
+				events=document.getElementById("events"),
+				contacts=document.getElementById("contacts"),
+				cv=document.getElementById("cv"),
+				updateprofile=document.getElementById("updateprofile"),
+				feedback=document.getElementById("feedback");
+
+
+			mui.plusReady(function(){
+				var launch=plus.webview.getLaunchWebview();
+				//退出登录
+				exit.addEventListener("tap",function(){
+					localStorage.setItem("userId","");
+					mui.toast("已退出登录");
+					mui.fire(launch,"exit",{});
+				});
+				feedback.addEventListener('tap',function(){
+					mui.openWindow({
+						url:"feedback.html",
+						id:"feedback",
+						style:{
+							bottom:"50px"
+						}
+					})
+				});
+				updateprofile.addEventListener('tap',function(){
+					mui.openWindow({
+						url:"updateProfile.html",
+						id:"updateProfile",
+						style:{
+							bottom:"50px"
+						}
+					})
+				});
+				cv.addEventListener('tap',function(){
+					mui.openWindow({
+						url:"cv.html",
+						id:"cv",
+						style:{
+							bottom:"50px"
+						}
+					})
+				});
+
+				contacts.addEventListener('tap',function(){
+					mui.openWindow({
+						url:"",
+						id:"",
+						style:{
+							bottom:"50px"
+						}
+					})
+				});
+
+				events.addEventListener('tap',function(){
+					mui.openWindow({
+						url:"",
+						id:"",
+						style:{
+							bottom:"50px"
+						}
+					})
+				});
+
+			})
+
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/signIn.css"/>
+	</head>
+
+	<body>
+		<div class="mui-content mui-fullscreen">
+			<div class="mui-action-back mui-icon mui-icon-back goback"></div>
+			<div class="company-logo">
+				<img src="images/companyLogo.png" alt="logo">
+			</div>
+			<div class="company-name">Company Name</div>
+			<div class="mui-input-group">
+			    <div class="mui-input-row">
+			        <label>Mailbox</label>
+			        <input type="text" class="mui-input-clear" id="email" placeholder="UserName@hotmail.com" value="">
+			        <span class="error-tip">Email Error<i></i></span>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>Password</label>
+			        <input type="password" id="password" value="">
+			        <span class="error-tip">Password Error<i></i></span>
+			    </div>
+			    <button type="button" class="submit" id="submit">SIGN  IN</button>
+			</div>
+			<div class="forget">Forgot password? <button class="mui-btn mui-btn-link link-to-forget" id="forgot">Tap Here</button></div>
+			<div class="register">
+				<button class="mui-btn mui-btn-link" id="register">REGISTER</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/signIn.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

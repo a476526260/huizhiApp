@@ -1,0 +1,60 @@
+ul,li{ list-style: none; padding: 0; margin: 0;}
+.mui-bar{ background: #58bf92;}
+.mui-content{ background: #fff;}
+.map-area{ margin-bottom: 0.5rem;}
+.map-area img{ width: 100%;}
+.conference-info{ padding-bottom: 50px;}
+.conference-name{ text-align: center; font-size: 0.48rem; line-height: 0.6rem; text-transform: uppercase; color: #58bf92; margin: 0; padding-bottom: 0.3rem; position: relative;}
+.conference-name:after{ content: ""; display: block; height: 1px; background: #f3f5f8; position: absolute; width: 80%; left: 10%; right: 10%; bottom: 0;}
+.infor-box{ width: 80%; margin: 0.4rem auto 0;}
+.infor-item{ overflow: hidden;}
+.infor-box .tit{ float: left; font-size: 0.3rem; color: #58BF92; width: 22%;}
+.infor-box .txt{ float: left; font-size: 0.24rem; color: #3f3f50; width: 78%;}
+.iconfont{ margin-right: 5px; font-size: 0.36rem;}
+.jump-btn{ display: block; margin: 0.6rem auto 0; width: 60%; color: #ffffff; background: #58bf92; border: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

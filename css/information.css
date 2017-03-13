@@ -1,0 +1,23 @@
+html,body,.mui-content{ background-color: #e5e6e6;}
+.information-wrap{ width: 94%; margin: 0 auto;}
+.infofmation-banner img{ width: 100%; margin-top: 4%; vertical-align: middle;}
+.information-text{ padding-top: 0.5rem; background: #ffffff;}
+.information-text h2{ font-size: 0.3rem; line-height: 0.36rem; color: #515151; text-align: center; margin: 0;}
+.information-text p{ text-align: center; font-size: 0.26rem; line-height: 0.3rem; margin: 0;}
+.information-text .tip{ text-align: center; font-size: 0.2rem; color: #58bf92; margin-top: 0.18rem;}
+.logo-sponsor{ overflow: hidden; background: #58bf92; position: relative;}
+.sopnsor-icon{ float: left; width: 20%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);-webkit-transform: translateY(-50%);}
+.sopnsor-icon img{ width: 60%;}
+.sopnsor-icon span{ color: #fff; display: block; text-align: center; font-size: 0.26rem; margin-top: 0.02rem;}
+.company-slider{ float: left; width: 80%; margin-left: 20%;}
+.company-slider .mui-table-view{ background: none;}
+.logo-sponsor .company-slider span{ color: #fff; font-size: 0.2rem; line-height: 0.24rem; display: block;}
+.company-logo{ position: relative;}
+.company-logo .level{ position: absolute; width: 0.54rem !important; height: 0.54rem !important; top: 0; right: 0;}
+.company-logo .logo{ width: 80% !important;}
+.logo-partner{ overflow: hidden; background: none; position: relative;}
+.partner-icon{ float: left; width: 20%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);-webkit-transform: translateY(-50%);}
+.partner-icon img{ width: 60%;}
+.partner-icon span{ color: #58bf92; display: block; text-align: center; font-size: 0.26rem; margin-top: 0.02rem;}
+.logo-partner .company-slider span{ color: #515151; font-size: 0.2rem; line-height: 0.24rem; display: block;}
+

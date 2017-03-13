@@ -1,0 +1,471 @@
+{
+	"index.html": {
+		"resources": [
+			"css/index.css",
+			"images/icon-message.png",
+			"images/LOGO.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/icon-me.png",
+			"indexbody.html",
+			"images/icon-home.png",
+			"images/icon-events.png",
+			"lib/dongyi.js",
+			"css/public.css",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf",
+			"images/logo.png",
+			"js/public.js",
+			"lib/jquery-1.7.2.min.js",
+			"images/happening.png",
+			"images/upcoming.png",
+			"images/past.png",
+			"images/index-s2.jpg",
+			"images/index-s3.jpg",
+			"images/index-b1.jpg",
+			"images/index-s1.jpg",
+			"images/index-b3.jpg",
+			"images/index-b2.jpg",
+			"css/indexbody.css",
+			"js/indexbody.js",
+			"js/index.js"
+		],
+		"refer": [
+			"indexbody.html",
+			"reset.html",
+			"signIn.html",
+			"list.html",
+			"happening.html",
+			"layout.html",
+			"agenda-1.html",
+			"agenda.html",
+			"Myevents-03.html",
+			"Myevents-3.html",
+			"groupChat.html"
+		]
+	},
+	"indexbody.html": {
+		"resources": [
+			"css/indexbody.css",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"lib/jquery-1.9.0.js",
+			"js/indexbody.js",
+			"fonts/mui.ttf",
+			"indexbody.html",
+			"images/index-b1.jpg",
+			"images/index-s1.jpg",
+			"images/index-b3.jpg",
+			"images/index-b2.jpg",
+			"images/index-s2.jpg",
+			"images/index-s3.jpg",
+			"images/logo.png",
+			"css/public.css",
+			"js/public.js"
+		],
+		"refer": [
+			"indexbody.html",
+			"happening.html",
+			"reset.html",
+			"upComing.html",
+			"agenda.html"
+		]
+	},
+	"register_2.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/register.css",
+			"images/photo.png",
+			"lib/pinchzoom.js",
+			"images/frog.jpg",
+			"lib/jquery-1.9.0.js",
+			"js/register.js",
+			"js/public.js",
+			"js/register_2.js"
+		],
+		"refer": []
+	},
+	"reset.html": {
+		"resources": [
+			"js/mui.min.js",
+			"images/earth.png",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/companyLogo.png",
+			"css/reset.css",
+			"js/reset.js",
+			"js/public.js",
+			"lib/jquery-1.7.2.min.js",
+			"images/close-btn.png"
+		],
+		"refer": []
+	},
+	"list.html": {
+		"resources": [
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/public.css",
+			"images/list-img2.jpg",
+			"css/list.css",
+			"images/icons.png",
+			"images/list-img1.jpg",
+			"lib/jquery-1.9.0.js",
+			"js/list.js",
+			"lib/jquery-1.7.2.min.js",
+			"js/public.js",
+			"js/mui.js",
+			"lib/dropload.min.js",
+			"css/dropload.css"
+		],
+		"refer": []
+	},
+	"signIn.html": {
+		"resources": [
+			"css/signIn.css",
+			"images/companyLogo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/signIn.js",
+			"images/close-btn.png",
+			"js/public.js",
+			"lib/jquery-1.7.2.min.js"
+		],
+		"refer": [
+			"resetPassword.html",
+			"register.html"
+		]
+	},
+	"happening.html": {
+		"resources": [
+			"images/happending-banner.jpg",
+			"css/happending.css",
+			"js/mui.min.js",
+			"css/happening.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/logo.png",
+			"css/public.css",
+			"images/happening-icon-1.png",
+			"images/happening-icon-2.png",
+			"images/happening-icon-4.png",
+			"images/happening-icon-5.png",
+			"images/happening-icon-6.png",
+			"images/happening-icon-3.png",
+			"images/icons.png",
+			"images/past-banner.jpg",
+			"images/upcoming.jpg",
+			"lib/jquery-1.9.0.js",
+			"lib/jquery-1.7.2.min.js",
+			"js/happening.js",
+			"js/public.js"
+		],
+		"refer": [
+			"networking.html",
+			"material.html",
+			"agenda.html",
+			"layout.html",
+			"agenda-1-0-1.html"
+		]
+	},
+	"layout.html": {
+		"resources": [
+			"images/logo.png",
+			"js/mui.min.js",
+			"images/layout.jpg",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"css/public.css",
+			"images/m.png",
+			"css/iconfont.css"
+		],
+		"refer": []
+	},
+	"upComing.html": {
+		"resources": [
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"images/icons.png",
+			"images/upcoming.jpg",
+			"css/mui.min.css",
+			"css/public.css"
+		],
+		"refer": []
+	},
+	"agenda.html": {
+		"resources": [
+			"css/agenda.css",
+			"images/write-down.png",
+			"images/agenda-banner.jpg",
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"lib/jquery-1.9.0.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"css/public.css",
+			"images/agenda-add.jpg"
+		],
+		"refer": []
+	},
+	"agenda-1.html": {
+		"resources": [
+			"css/agenda.css",
+			"images/agenda-banner.jpg",
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"css/public.css"
+		],
+		"refer": []
+	},
+	"Speakers.html": {
+		"resources": [
+			"images/speaker-photo.png",
+			"images/logo.png",
+			"images/speaker-company.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/speaker-title.png",
+			"css/public.css",
+			"css/speakers.css"
+		],
+		"refer": []
+	},
+	"networking.html": {
+		"resources": [
+			"images/logo.png",
+			"js/mui.min.js",
+			"css/networing.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/public.css",
+			"lib/jquery-1.9.0.js",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf",
+			"images/networking-heart.png",
+			"images/networking-chat.png",
+			"js/networking.js",
+			"js/public.js",
+			"lib/jquery-1.7.2.min.js"
+		],
+		"refer": []
+	},
+	"material.html": {
+		"resources": [
+			"images/material-icon1.png",
+			"images/logo.png",
+			"js/mui.min.js",
+			"images/material-icon2.png",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"css/public.css",
+			"css/material.css",
+			"js/material.js",
+			"js/public.js",
+			"lib/jquery-1.7.2.min.js"
+		],
+		"refer": []
+	},
+	"groupChat.html": {
+		"resources": [
+			"images/chat-user2.png",
+			"fonts/mui.ttf",
+			"images/chat-left.png",
+			"css/public.css",
+			"images/logo.png",
+			"js/mui.min.js",
+			"images/chat-right.png",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"images/networking-heart.png",
+			"images/chat-user1.png",
+			"fonts/iconfont.ttf",
+			"css/groupchat.css",
+			"js/public.js",
+			"js/chat.js",
+			"lib/jquery-1.7.2.min.js"
+		],
+		"refer": []
+	},
+	"information.html": {
+		"resources": [
+			"images/sponsor.png",
+			"images/level-2.png",
+			"images/company-logo3.png",
+			"images/logo.png",
+			"js/mui.min.js",
+			"images/level-3.png",
+			"images/level-1.png",
+			"images/company-logo1.png",
+			"fonts/mui.ttf",
+			"images/company-logo2.png",
+			"css/mui.min.css",
+			"css/public.css",
+			"images/information-banner.jpg",
+			"images/partner.png",
+			"css/information.css"
+		],
+		"refer": []
+	},
+	"companyProfile.html": {
+		"resources": [
+			"images/logo.png",
+			"js/mui.min.js",
+			"css/companyProfile.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/public.css",
+			"images/profile-banner.jpg"
+		],
+		"refer": []
+	},
+	"updateProfileLook.html": {
+		"resources": [
+			"images/speaker-photo.png",
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/public.css",
+			"css/updateProfileLook.css"
+		],
+		"refer": []
+	},
+	"feedback.html": {
+		"resources": [
+			"css/feedback.css",
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"css/public.css",
+			"lib/jquery-1.7.2.min.js",
+			"images/pen.png",
+			"images/gx.png",
+			"js/feedback.js"
+		],
+		"refer": []
+	},
+	"Myevents-03.html": {
+		"resources": [
+			"images/icon-e.png",
+			"images/icon-c.png",
+			"css/myevents.css",
+			"images/icon-u.png",
+			"images/icon-f.png",
+			"images/icon-m.png",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"resetPassword.html": {
+		"resources": [
+			"css/resetpassword.css",
+			"images/earth.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/public.js",
+			"lib/jquery-1.9.0.js",
+			"css/mui.min.css",
+			"images/companyLogo.png",
+			"images/close-btn.png"
+		],
+		"refer": [
+			"resetPassword.html",
+			"reset.html"
+		]
+	},
+	"register.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/register.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/companyLogo.png",
+			"js/register.js",
+			"js/public.js",
+			"lib/jquery-1.7.2.min.js"
+		],
+		"refer": [
+			"register_2.html",
+			"signIn.html"
+		]
+	},
+	"agenda-1-0-1.html": {
+		"resources": [
+			"css/agenda.css",
+			"js/agenda.js",
+			"images/write-down.png",
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/public.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"css/public.css",
+			"lib/jquery-1.7.2.min.js"
+		],
+		"refer": []
+	},
+	"Myevents-3.html": {
+		"resources": [
+			"images/icon-e.png",
+			"images/icon-c.png",
+			"css/myevents.css",
+			"images/icon-u.png",
+			"images/icon-f.png",
+			"images/icon-m.png",
+			"images/logo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/public.css"
+		],
+		"refer": [
+			"updateProfile.html",
+			"cv.html",
+			"feedback.html"
+		]
+	},
+	"updateProfile.html": {
+		"resources": [
+			"images/speaker-photo.png",
+			"images/logo.png",
+			"js/mui.min.js",
+			"css/updateProfile.css",
+			"css/mui.min.css",
+			"css/public.css",
+			"images/pen.png",
+			"fonts/mui.ttf"
+		]
+	},
+	"cv.html": {
+		"resources": [
+			"css/cv.css",
+			"js/cv.js",
+			"images/Experience.png",
+			"images/Contact.png",
+			"images/blank.gif",
+			"images/cv-icon.jpg",
+			"js/public.js"
+		]
+	}
+}

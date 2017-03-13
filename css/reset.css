@@ -1,0 +1,112 @@
+.mui-content {
+	background: url(../images/earth.png) 50% 90% no-repeat #e5e6e6;
+	background-size: 50%;
+}
+
+.goback {
+	position: absolute;
+	top: 2%;
+	left: 2%;
+}
+
+.goback:before {
+	color: #6cc59e;
+}
+
+.company-logo {
+	width: 29.33%;
+	margin: 45px auto 0;
+}
+
+.company-logo img {
+	width: 100%;
+	height: auto;
+}
+
+.mui-input-group {
+	background: none;
+	margin-top: 30px;
+}
+
+.mui-input-group .mui-input-row {
+	width: 92%;
+	margin: 10% auto 0;
+	background: #ffffff;
+	border-radius: 8px;
+}
+
+.mui-input-row label {
+	padding: 0;
+	width: 30%;
+	line-height: 20px;
+	font-size: 16px;
+	position: relative;
+	text-align: center;
+}
+
+.mui-input-row label:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 1px;
+	right: 2px;
+	top: 10%;
+	bottom: 10%;
+	background: #aeaeae;
+}
+
+.mui-input-row label~input {
+	font-size: 14px;
+	line-height: 20px;
+	width: 70%;
+	padding-left: 2%;
+}
+
+.mui-input-group:before,
+.mui-input-group:after {
+	display: none;
+}
+
+.mui-input-group .mui-input-row:after {
+	display: none;
+}
+
+.mui-input-row .error-tip {
+	display: none;
+	background: rgba(255, 70, 77, 0.85);
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	height: 32px;
+	width: 68%;
+	color: #ffffff;
+	line-height: 32px;
+	font-size: 16px;
+	border-radius: 5px 16px 16px 5px;
+	text-align: right;
+	padding-right: 35px;
+}
+
+.mui-input-row .error-tip i {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: url(../images/close-btn.png) center no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.submit {
+	width: 92%;
+	display: block;
+	margin: 0 auto;
+	background: #58bf92;
+	border: none;
+	font-size: 20px;
+	color: #ffffff;
+	margin-top: 8%;
+	border-radius: 8px;
+}

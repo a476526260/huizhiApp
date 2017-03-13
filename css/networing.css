@@ -1,0 +1,83 @@
+.mui-content{ background: #e5e6e6;}
+.search-box {
+	padding: 12px 0;
+	text-align: center;
+	background-color: #e5e6e6;
+	display: block;
+	position: relative;
+	background: #58bf92;
+}
+
+.search-box:before {
+	color: #58bf92;
+	position: absolute;
+	left: 9%;
+	top: 50%;
+	margin-top: -12px;
+}
+
+.search-box input[type=search] {
+	width: 84%;
+	height: 32px;
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;
+	padding-left: 0.7rem;
+	border-radius: 3px;
+	text-align: left;
+}
+.mui-control-content {
+	background-color: #E5E6E6;
+	min-height: 500px;
+}
+.mui-control-content .mui-loading {
+	margin-top: 50px;
+}
+
+#sliderSegmentedControl{ padding-left:5%; padding-right:22%; background: #58bf92;}
+#sliderSegmentedControl a{ color: #fff; position: relative;}
+#sliderSegmentedControl a.active:after{ content: ""; display: block; width: 60%; height: 1px; background: #fff; position: absolute; bottom: 5px; left: 20%;}
+#sliderProgressBar{ width: 10%;}
+.sort-way{ position: absolute; right: 5%; top: 0; height: 38px;}
+.sort-way .mui-icon{ color: #fff; font-size: 18px; position: absolute; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%)}
+.sort-way .mui-icon.icon-th-large-copy{ right: 30px;}
+.sort-way .mui-icon.icon-fenlei{ right: 5px;}
+.mui-table-view{ width: 94%; margin: 0 auto; background: none; overflow: hidden;}
+.list-style .mui-table-view-cell{ padding: 0; margin-bottom: 0.18rem; background: #fff;}
+.mui-table-view-cell>a:not(.mui-btn){ margin: 0;}
+.mui-table-view-cell:after{ display: none;}
+.list-style .mui-media-body p{ line-height: 0.34rem;}
+.list-style .mui-media-body .name{ color: #58bf92; font-size: 0.3rem;}
+.list-style .mui-media-body .company{ width: 75%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.list-style .mui-media-body .job,.list-style .mui-media-body .company{ color: #010101;}
+
+.mui-slider .mui-slider-group .mui-slider-item .list-style img{ width: 1.22rem; height: 1.22rem; max-width: 1.22rem;}
+.mui-table-view.list-style .mui-media-body{ padding:0.1rem 0;}
+.list-style .mui-scroll{ background: #e5e6e6;}
+.list-style .chat{ display: block; width: 0.42rem; height: 0.3rem; background: url(../images/networking-chat.png) center no-repeat; background-size:100% 100% ; position: absolute; right: 10%; bottom: 0.1rem;}
+.list-style .heart{ display: block; width: 0.34rem; height: 0.3rem; background: url(../images/networking-heart.png) center no-repeat; background-size:100% 100% ; position: absolute; right: 2%; bottom: 0.1rem;}
+
+
+
+.block-style .mui-table-view-cell{ float: left; width: 22%; padding: 0; margin-right: 4%; margin-bottom: 0.2rem;}
+.block-style .mui-table-view-cell:nth-child(4n){ margin-right: 0 !important;}
+.mui-slider .mui-slider-group .mui-slider-item .block-style img{ width: 100%; height: auto; max-width: 100%; display: block; margin: 0; float: none;}
+.mui-table-view.block-style .mui-media-body{ display: block;}
+.block-style .mui-media-body p{ line-height: 0.34rem;}
+.block-style .mui-media-body .name{ color: #58bf92; font-size: 0.3rem; text-align: center; margin-top: 0.1rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.block-style .mui-media-body .job,.block-style .mui-media-body .company{ color: #010101; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.block-style .chat{ display: none;}
+.block-style .heart{ display: block; width: 0.34rem; height: 0.3rem; background: url(../images/networking-heart.png) center no-repeat; background-size:100% 100% ; position: absolute; right: 0; bottom: 1.12rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+

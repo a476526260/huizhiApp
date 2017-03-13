@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-action-back mui-icon mui-icon-back goback"></div>
+			<div class="headImage">
+				<img src="images/photo.png" alt="logo">
+			</div>
+			<div class="mui-input-group">
+			    <div class="mui-input-row">
+			        <label>Last Name</label>
+			        <input type="text" id="lname">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>First Name</label>
+			        <input type="text" id="fname">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>Title</label>
+			        <input type="text" id="title">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>Company</label>
+			        <input type="text" id="company">
+			    </div>
+				<button class="change-head-image" class="mui-btn" id="uploadImg">Upload Picture</button>
+			    <button type="button" class="mui-btn mui-btn-link submit-form" id="submit">Submit</button>
+			</div>
+			<div class="protected">All above information will be protected by <br>XXX</div>
+		</div>
+		<div class="photoSelect">
+			<div class="thumbBox">
+				<div class="pinch-zoom">
+		            <img src="images/frog.jpg" id="headImage"/>
+		       </div>
+			</div>
+			<div class="btn-group">
+				<button class="mui-btn mui-btn-link mui-pull-left">取消</button>
+				<button class="mui-btn mui-btn-link mui-pull-right">选取</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.9.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/register_2.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

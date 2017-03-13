@@ -1,0 +1,247 @@
+html{
+	background: #e5e6e6;
+}
+
+.color-green{
+	color: #58bf92 !important;
+}
+.mui-content{
+	background: #e5e6e6;
+}
+.agenda-banner{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+.agenda-banner img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.conference-title{
+	width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 0.22rem;
+	line-height: 0.22rem;
+	color: #fff;
+	padding: 0.2rem 0.1rem;
+	background: #58bf92;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: -15px;
+	position: relative;
+}
+.conference-infor-list{
+	width: 96%;
+	margin: 0.45rem auto 0;
+	background: none;
+}
+.mui-table-view:after{
+	display: none;
+}
+.mui-table-view-cell:after{
+	display: none;
+}
+.conference-infor-list .mui-table-view-cell{
+	background: #fff;
+	padding: 0.2rem 0;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: .48rem;
+	box-shadow: 1px 4px 8px #555555;
+}
+.conference-infor-list .mui-table-view-cell:before{
+	content: "";
+	display: block;
+	width: 0.6rem;
+	height: 0.6rem;
+	background: #96e9c5;
+	border-radius: 50%;
+	position: absolute;
+	left: -0.5rem;
+	top: 50%;
+	margin-top: -0.3rem;
+}
+.conference-infor-list .conference-item-3:before{
+	top: 0.2rem;
+	margin-top: 0;
+	-webkit-transform:translateY(-0.1rem);
+	transform: translateY(-0.1rem);
+}
+
+.conference-infor-list .mui-table-view-cell .mui-icon{
+	position: absolute;
+	left: 0.25rem;
+	top: 50%;
+	font-size: 24px;
+	-webkit-transform:translateY(-50%);
+	transform: translateY(-50%);
+}
+.conference-infor-list .conference-item-3 .mui-icon{
+	top: 0.2rem;
+	-webkit-transform:translateY(0);
+	transform: translateY(0);
+}
+.conference-infor-list .mui-table-view-cell p{
+	padding-left: .9rem;
+	padding-right: 0.5rem;
+	color: #434343;
+	font-size: 0.24rem;
+	line-height: 0.38rem;
+
+}
+.wirte-down{
+	position: absolute;
+	width: 0.6rem;
+	height: auto;
+	right: 0.27rem;
+	bottom: 0.37rem;
+}
+.wirte-down img{
+	width: 100%;
+	 height: auto;
+}
+.address-img{
+	width: 90%;
+	margin: -0.48rem auto 0.48rem;
+}
+.address-img img{
+	width: 100%;
+}
+.btn-group{
+	width: 90%;
+	margin:0 auto;
+	overflow: hidden;
+	padding:0 0.35rem 0.35rem;
+}
+.btn-group button{
+	background: #58bf92;
+	border: none;
+	font-size: 0.26rem;
+	width: 1.5rem;
+}
+.sort{
+	font-size: 0.3rem;
+	width: 90%;
+	margin: 0 auto;
+	padding: 0.2rem 0;
+}
+.sortEle{
+	display: inline-block;
+	-webkit-appearance:menulist;
+	padding: 0;
+	margin: 0;
+	width:auto;
+	font-size: 0.3rem;
+	background: none;
+	margin-left: 10px;
+}
+.sort-title{
+	text-align: center;
+	color: #fff;
+	font-size: 0.3rem;
+	line-height: 0.3rem;
+	background: #58bf92;
+	padding: 0.2rem 0;
+	position:relative;
+}
+.sort-title .arrowright{ position:absolute; right: 5%; top: 50%; margin-top: -12px;;}
+
+.sort-content-list{
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid #707070;
+	border-top: none;
+	overflow: hidden;
+	margin-bottom: 0.2rem;
+}
+.sort-content-list .mui-table-view-cell{
+	border-bottom: 1px solid #aaa;
+	padding: 0.2rem 0;
+}
+.sort-content-list .mui-table-view-cell:last-child{
+	border-bottom: none;
+}
+.trip-title{
+	color: #373f4a;
+	font-size: 0.24rem;
+	font-weight: bold;
+	margin: 0;
+	line-height: 0.3rem;
+	overflow: hidden;
+}
+.trip-title .time{
+	float: left;
+	width: 15%;
+	height: 0.24rem;
+	text-align: right;
+}
+.trip-title .thing{
+	float: left;
+	width: 80%;
+	margin-left: 5%;
+	padding-right: 0.1rem;
+
+}
+.trip-title+.trip-detail{
+	margin-top: 10px;
+}
+.trip-detail{
+	color: #58bf92;
+	font-size: 0.24rem;
+	line-height: 0.3rem;
+	overflow: hidden;
+}
+.trip-detail .circle{
+	float: left;
+	width: 15%;
+	text-align: right;
+}
+.trip-detail .thing{
+	float: left;
+	width: 80%;
+	margin-left: 5%;
+	padding-right: 0.1rem;
+}
+.speaker{
+	overflow: hidden;
+	color: #58bf92;
+	font-size: 0.24rem;
+	line-height: 0.3rem;
+	margin-top: 10px;
+}
+.speaker .speaker-icon{
+	float: left;
+	width: 15%;
+	text-align: right;
+	font-size: 17px;
+}
+.speaker .speaker-infor{
+	float: left;
+	width: 80%;
+	margin-left: 5%;
+	padding-right: 0.1rem;
+}
+.speaker .speaker-infor b{
+	display: block;
+	font-style: normal;
+	position: relative;
+	padding-right: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.speaker .speaker-infor b .mui-icon{
+	position: absolute;
+	right: -5px;
+	top: 0;
+	font-size: 16px;
+}
+.day-slide{ width: 94%; margin: -0.48rem auto 0;}
+.mui-btn.done{
+	background: #fff;
+	border: 2px solid #58bf92;
+	color: #58bf92;
+}

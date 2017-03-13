@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/speakers.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
+			<h1 class="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<div class="speaker-basic-infor">
+				<div class="speaker-photo"><img src="images/blank.gif" id="face" /></div>
+				<div class="speaker-name" id="uname"></div>
+				<div class="speaker-other">
+					<span class="job" id="job"></span>,
+					<span class="sex" id="sex"></span>
+					<span class="age" style="display: none;"></span>
+				</div>
+			</div>
+			<div class="speaker-detail-infor">
+				<div class="title">
+					<div class="title-left">Title</div>
+					<div class="title-right">
+						<p id="title"></p>
+						<p style="display: none;"></p>
+					</div>
+				</div>
+				<div class="company">
+					<div class="company-title"><span id="company"></span></div>
+					<div class="company-introduce" id="content"></div>
+				</div>
+			</div>
+			<button type="button" class="mui-btn send-message">Send Message</button>
+		</div>
+
+
+		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/speaker.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+
+</html>

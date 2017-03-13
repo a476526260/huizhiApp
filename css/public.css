@@ -1,0 +1,115 @@
+@media screen and (max-width:359px) and (min-width:320px) {
+	html,
+	body {
+		font-size: 50px !important;
+	}
+}
+
+@media screen and (max-width:374px) and (min-width:360px) {
+	html,
+	body {
+		font-size: 56.25px !important;
+	}
+}
+
+@media screen and (max-width:413px) and (min-width:375px) {
+	html,
+	body {
+		font-size: 58.5px !important;
+	}
+}
+
+@media screen and (max-width:639px) and (min-width:414px) {
+	html,
+	body {
+		font-size: 64.6px !important;
+	}
+}
+
+@media screen and (min-width:640px) {
+	html,
+	body {
+		font-size: 100px !important;
+	}
+}
+
+body {
+	background: #fff;
+}
+
+
+/*头部区域*/
+
+.mui-bar {
+	background-color: #c1c1c1;
+}
+
+.mui-bar-nav .mui-action-back {
+	color: #ffffff;
+	font-size: 20px;
+	margin: 2px 0;
+}
+
+.app-logo {
+	width: 80px;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.app-logo img {
+	width: 100%;
+	max-height: 44px;
+	vertical-align: middle;
+}
+
+
+/*底部导航*/
+
+.mui-bar-tab .mui-tab-item {
+	color: #1a1210;
+	position: relative;
+	overflow:visible !important;
+}
+
+.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
+	display: inline;
+	vertical-align: middle;
+	font-size: 13px;
+}
+
+.mui-tab-item .mui-icon:before {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 24px;
+}
+
+.mui-icon .mui-badge-div {
+	width: 16px;
+	height: 16px;
+	background: #58bf92;
+	top: -6px;
+	color: #1A1210;
+	line-height: 16px;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: #499b76;
+	background: #fff;
+}
+.mui-iframe-wrapper{ z-index: -1 !important;}
+.mui-bar-tab .mui-tab-item .icon-area{ overflow: hidden; text-overflow: ellipsis; padding: 6px 0;}
+.mui-bar{ z-index: 9999999999; visibility: visible;}
+.child-nav{ position: absolute; top: -99px; margin: 0; padding: 0; list-style: none; width: 100%; z-index: 99999;}
+.child-nav li{background: rgba(82,217,158,.9); line-height: 2rem; border-bottom: 1px solid #fff; text-align: left; padding-left: 1rem; overflow: hidden; text-overflow: ellipsis; font-size: 12px; position: relative;}
+.child-nav li:before{ content: ""; display: block; position: absolute; left: 2px; top: 50%;}
+.child-nav li:nth-child(1):before{ width: 0.73rem; height: 0.79rem; background: #007AFF; background: url(../images/happening.png) center no-repeat; background-size: 100% 100%; margin-top: -0.4rem;}
+.child-nav li:nth-child(2):before{ width: 0.73rem; height: 0.80rem; background: #007AFF; background: url(../images/upcoming.png) center no-repeat; background-size: 100% 100%; margin-top: -0.4rem;}
+.child-nav li:nth-child(3):before{ width: 0.61rem; height: 0.81rem; background: #007AFF; background: url(../images/past.png) center no-repeat; background-size: 100% 100%; margin-top: -0.4rem;}
+.new-circle{ width: 6px; height: 6px; background: red; border-radius: 50%; position: absolute; top: 0; right: 0;}
+
