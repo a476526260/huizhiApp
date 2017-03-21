@@ -26,6 +26,7 @@
 	padding: 0;
 	padding-left: 0.7rem;
 	border-radius: 3px;
+	-webkit-border-radius: 3px;
 	text-align: left;
 }
 
@@ -33,6 +34,7 @@
 	width: 100%;
 	height: auto;
 	background: #fff;
+	overflow: hidden;
 }
 
 .happening-banner img {
@@ -44,8 +46,8 @@
 .happening-lists {
 	width: 100%;
 	overflow: hidden;
-	padding: 0 2.5%;
-	margin-top: 5%;
+	padding: 5% 2.5% 0;
+	/*margin-top: 5%;*/
 }
 
 .happening-lists .item {
@@ -54,6 +56,7 @@
 	margin-right: 2%;
 	background: #e6e6e6;
 	border-radius: 8px;
+	-webkit-border-radius: 8px;
 	margin-bottom: 5%;
 }
 
@@ -112,6 +115,7 @@
 .upcoming-banner {
 	width: 100%;
 	height: auto;
+	overflow: hidden;
 	background: #fff;
 }
 
@@ -133,6 +137,7 @@
 	margin-right: 2%;
 	background: #e6e6e6;
 	border-radius: 8px;
+	-webkit-border-radius: 8px;
 	margin-bottom: 5%;
 }
 
@@ -173,7 +178,7 @@
 }
 
 .upcoming-lists .item:nth-child(3) .item-icon {
-	background-position: -160px -184px;
+	background-position: -160px -104px;
 }
 
 .upcoming-lists .item:nth-child(4) .item-icon {
@@ -193,6 +198,7 @@
 	width: 100%;
 	height: auto;
 	background: #fff;
+	overflow: hidden;
 }
 
 .past-banner img {
@@ -213,6 +219,7 @@
 	margin:0 3%;
 	background: #e6e6e6;
 	border-radius: 8px;
+	-webkit-border-radius: 8px;
 	margin-bottom: 5%;
 }
 
@@ -260,9 +267,62 @@
 .past .item:nth-child(4) .item-icon {
 	background-position: -240px -264px;
 }
-.happening,.upcoming,.past{ padding-bottom: 5%;}
+.happening,.upcoming,.past{
+	padding-bottom: 5%;
+}
 
 
+.mui-input-row{
+	overflow: inherit;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear {
+	right: calc( 18% + 30px );
+	line-height: 38px;
+}
+.toggle{
+	width: 84%;
+	z-index: 3333;
+	/*top: 32px;*/
+	left: 8%;
+	height: auto;
+	background: #FFFFFF;
+	overflow: hidden;
+	text-align: left;
+	margin: auto;
+	position: absolute;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	z-index: 33333;
+	font-family: "微软雅黑";
+}
+.toggle .mui-table-view-cell{
+	font-size: 0.24rem;
+	overflow: hidden;
+    padding: 11px 15px;
+    color: #58bf92;
+    -webkit-touch-callout: none;
+    font-family: "微软雅黑";
+}
+.dl-btn {
+	position: absolute;
+	top: 12px;
+	right: 8%;
+	border: none;
+	border-left: 1px solid #DCD9CF;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	color: #DCD9CF;
+	height: 32px;
+	padding: 5px 10px;
+	font-size: 16px;
+	color: #58bf92;
+}
+#toggle_ecs{
+	padding: 15px auto;
+	color: #555555;
+	text-align: center;
+}
+.content-box{overflow: hidden;}
 
 
 

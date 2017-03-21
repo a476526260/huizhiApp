@@ -12,34 +12,46 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
 			<div class="speaker-basic-infor">
-				<div class="speaker-photo"><img src="images/blank.gif" id="face" /></div>
-				<div class="speaker-name" id="uname"></div>
+				<div class="speaker-photo"><img src="images/blank.gif" id="face" /></div> 
+				<div class="speaker-name" id="uname">fasdfasd</div>
 				<div class="speaker-other">
-					<span class="job" id="job"></span>,
+					<span class="job" id="job"></span>
 					<span class="sex" id="sex"></span>
-					<span class="age" style="display: none;"></span>
+					<span class="age" style="display: none;"></span> 
 				</div>
 			</div>
 			<div class="speaker-detail-infor">
 				<div class="title">
-					<div class="title-left">Title</div>
+					<div class="title-left">Topic</div>
 					<div class="title-right">
 						<p id="title"></p>
-						<p style="display: none;"></p>
 					</div>
 				</div>
+				<div class="contact">
+					<div class="title-left">Company</div>
+					<div class="title-right">
+						<p id="company"></p>
+					</div>
+				</div>
+				
+				
 				<div class="company">
-					<div class="company-title"><span id="company"></span></div>
 					<div class="company-introduce" id="content"></div>
 				</div>
 			</div>
-			<button type="button" class="mui-btn send-message">Send Message</button>
+			<button type="button" class="mui-btn send-message" id="send">Send Message</button>
+			<div id="downMask">
+	    		<span class="mui-icon mui-icon-spinner-cycle mui-spin"></span>
+	    	</div>
+			<div id="dp" class="mui-text-center">
+				<p id="progressbar" class="mui-progressbar mui-progressbar-in" data-progress="20"><span></span></p>
+			</div>
 		</div>
 
 
@@ -47,7 +59,7 @@
 		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/speaker.js" type="text/javascript" charset="utf-8"></script>
-		
+
 	</body>
 
 </html>

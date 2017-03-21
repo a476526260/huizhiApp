@@ -49,12 +49,44 @@ html,body{ background: #e5e6e6;}
 .mui-table-view-cell{ border-bottom: 1px solid #707070; border-right: 1px solid #707070; padding: 2% 2% 2% 18%; box-sizing: border-box;}
 .mui-table-view-cell h2{ font-size: 0.3rem; color: #434343; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 0.35rem; line-height: 0.35rem;}
 .mui-table-view-cell p{ font-size: 0.26rem; color: #707070; padding-left: 20px; position: relative;}
+.mui-table-view-cell p.job{ display: ;}
 .mui-table-view-cell p span{ position: absolute; left: 0; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%);;}
 .mui-table-view-cell .icon-1{ position: absolute; left: 2%; top: 8%; width: 0.5rem;}
-.mui-table-view-cell .icon-2{ position: absolute; left: 2%; top: 8%; width: 0.74rem;}
-.mui-table-view-cell .icon-1 img,.mui-table-view-cell .icon-2 img{ width: 100%; height: auto;}
+.mui-table-view-cell .icon-2{ position: absolute; left: 2%; top: 8%; width: 0.74rem; text-align: center; font-size: 0.16rem;}
+.mui-table-view-cell .icon-1 img,.mui-table-view-cell .icon-2 img{display: block; width: 100%; height: auto;}
+.mui-table-view-cell img.icon-22{width: 80%;display: block;margin: 4px auto 0;}
 .border-left1{ border-left: 5px solid #58bf92;}
 .border-left2{ border-left: 5px solid #96e9c5;}
 .border-left3{ border-left: 5px solid #258ac3;}
 .border-left4{ border-left: 5px solid #96e9c5;}
+.mui-table-view-chevron .mui-table-view-cell {padding-right: 15px;}
 
+#pullrefresh{ padding:0 0 10px;}
+#downMask{ position: fixed; width: 100%; height: 100%;  background: rgba(0,0,0,0.6); top: 0; left: 0; z-index: 999999; display: none ;}
+#downMask span{position: absolute;top: 50%;left: 50%; margin:-0.5rem 0 0 -0.5rem;color: #fff;font-size: 1rem !important;
+-webkit-animation: cycle 5s infinite linear;-moz-animation: cycle 5s infinite linear;-o-animation: cycle 5s infinite linear;-ms-animation: cycle 5s infinite linear;animation:cycle 5s infinite linear;
+} 
+#dp{ position: fixed; top: 60%; z-index: 33333333; height: 10px; width: 80%; left: 10%;display: none;}
+#progressbar{top: 55%; width: 80%; left: 10%; height: 10px;}
+#DelFile{float: right; margin-right: 0.2rem;} 
+/*旋转*/
+@-webkit-keyframes cycle {
+    0% {-webkit-transform:rotate(0deg);;}
+    50% {-webkit-transform: rotate(180deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+@keyframes cycle {
+    0% { transform:rotate(0deg);}
+    50% { transform:rotate(180deg);}
+    100% {transform:rotate(360deg);}
+}
+@-moz-keyframes cycle {
+    0% {-webkit-transform:rotate(0deg);;}
+    50% {-webkit-transform:rotate(180deg);}
+    100% {-webkit-transform:rotate(360deg);}
+}
+@-o-keyframes cycle {
+    0% { transform: rotate(0deg);;}
+    50% { transform:rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}

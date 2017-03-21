@@ -24,21 +24,26 @@
 
 .company-name {
 	text-align: center;
-	font-size: 24px;
-	color: #1b1b1b;
+	font-size: 0.9rem;
+	color: #58bf92;
 	line-height: 36px;
 }
 
 .mui-input-group {
 	background: none;
 }
-
+.mui-input-group:after{
+	background-color: none !important;
+	display: none;
+}
 .mui-input-group .mui-input-row {
 	width: 92%;
 	margin: 5% auto 0;
 	background: #ffffff;
 }
-
+.mui-input-group .mui-input-row:after{
+	height: 0;
+}
 .mui-input-row label {
 	padding: 0;
 	width: 30%;
@@ -78,6 +83,7 @@
 	line-height: 32px;
 	font-size: 16px;
 	border-radius: 5px 16px 16px 5px;
+	-webkit-border-radius: 5px 16px 16px 5px;
 	text-align: right;
 	padding-right: 35px;
 }
@@ -86,6 +92,7 @@
 	width: 32px;
 	height: 32px;
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
 	background: url(../images/close-btn.png) center no-repeat;
 	background-size: 100% 100%;
 	position: absolute;
@@ -103,6 +110,7 @@
 	color: #ffffff;
 	margin-top: 5%;
 	border-radius: 8px;
+	-webkit-border-radius: 8px;
 }
 
 .forget {

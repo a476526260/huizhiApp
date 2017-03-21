@@ -1,6 +1,6 @@
 html,body,.mui-content{ background: #e7e7e7;}
 
-.mui-table-view{ background: none; width: 94%; margin: 0 auto; padding-bottom: 90px;}
+.mui-table-view{ background: none; width: 94%; margin: 0 auto;}
 .mui-table-view-cell{ overflow: visible; padding: 0; margin-bottom: 0.5rem;}
 .mui-table-view-cell:after{ display: none;}
 .mui-table-view:before,.mui-table-view:after{ display: none;}
@@ -9,31 +9,31 @@ html,body,.mui-content{ background: #e7e7e7;}
 .user-photo img{ width: 100%; height: 100%; display: block;}
 .user-photo b{ position: absolute; bottom: 0; right: 5%; width: 0.3rem; height: 0.3rem;}
 .other-people .user-photo{ left: 0; top: 0;}
-.other-people .chat-content{ background: #58bf92; padding: 12px 0; border-radius: 10px; width: calc(100% - 1.4rem); margin-left: 1.4rem; position: relative;}
+.other-people .chat-content{ background: #58bf92; padding: 12px 0; border-radius: 10px; -webkit-border-radius: 10px;  width: calc(100% - 1.4rem); margin-left: 1.4rem; position: relative;}
 .other-people .chat-content:before{ content: ""; display: block; width: 0.27rem; height: 0.32rem; background: url(../images/chat-left.png) center no-repeat; background-size: 100% 100%; position: absolute; top: 10px; left: -0.27rem;}
 .chat-content .chat-word{ font-size: 16px; line-height: 18px; color: #0c0c0c; padding-left: 2%;}
 .chat-content .chat-word span{ font-size: 14px;}
-.chat-content .time{ font-size: 12px; line-height: 18px; float: right; margin-right: 2%; width: 28%; overflow: hidden; text-overflow: ellipsis;white-space: normal; text-align: right;}
+.chat-content .time{ font-size: 12px;position: absolute; line-height: 18px; display: inline-block; width: auto; margin-right: 2%; right: 0px; width:7rem; overflow: hidden; text-overflow: ellipsis;white-space: normal; text-align: right;}
 .chat-content .time .iconfont{ font-size: 14px; margin-right: 3px;}
-.chat-infor{ overflow: hidden; position: relative;}
+.chat-infor{ overflow: hidden; position: relative;padding-bottom: 5px;}
 
 .myself .user-photo{ right: 0; top: 0;}
-.myself .chat-content{ background: #fff; padding: 8px 0 12px; border-radius: 10px; width: calc(100% - 1.4rem); margin-right: 1.4rem; position: relative;}
+.myself .chat-content{ background: #fff; padding: 8px 0 12px; border-radius: 10px;  -webkit-border-radius: 10px; width: calc(100% - 1.4rem); margin-right: 1.4rem; position: relative;}
 .myself .chat-content:after{ content: ""; display: block; width: 0.27rem; height: 0.32rem; background: url(../images/chat-right.png) center no-repeat; background-size: 100% 100%; position: absolute; top: 10px; right: -0.27rem;}
 
-.send-message-action{ position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; text-align: center; border-top:1px solid #555; border-bottom:1px solid #555;}
+.send-message-action{ position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; text-align: center; border-top:1px solid #555; border-bottom:1px solid #555; z-index: 999;}
 .send-message-action .messages{ border: none; width: 60%; margin: 0; display: inline-block; vertical-align: middle;}
 .send-message-action .iconfont{ font-size: 26px; display: inline-block; vertical-align: middle;}
 
 .writing .time{ display: none;}
 .writing .chat-word{ text-align: center; font-size: 18px;}
 
-.infor{ width: 70%; display: block; overflow: hidden; padding-left: 2%; float: left;}
-.infor b{ font-size: 12px; line-height: 14px; float: left; padding-right: 5px; color: #0c0c0c; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
-.infor b:nth-child(1){ width: 20%;}
+.infor{ /*width: 70%;*/ display: block; overflow: hidden; padding-left: 2%; float: left;}
+.infor b{ font-size: 12px; line-height: 14px; /*float: left;*/ padding-right: 5px; color: #0c0c0c; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block;font-weight: normal;}
+/*.infor b:nth-child(1){ width: 20%;}
 .infor b:nth-child(2){ width: 15%;}
 .infor b:nth-child(3){ width: 45%;}
-.infor b:nth-child(4){ width: 20%;}
+.infor b:nth-child(4){ width: 20%;}*/
 
 
 

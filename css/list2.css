@@ -1,0 +1,144 @@
+.mui-control-item {
+	background-color: #96e9c5 !important;
+}
+
+.mui-control-item .list-nav-icon {
+	padding: 10px 0;
+	text-align: center;
+}
+
+.mui-control-item .list-nav-icon span {
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	background-image: url(../images/icons.png);
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+
+.mui-control-item.list-nav-list-1 .list-nav-icon span {
+	background-position: 0 0;
+}
+
+.mui-control-item.list-nav-list-2 .list-nav-icon span {
+	background-position: -52px 0;
+}
+
+.mui-control-item.list-nav-list-3 .list-nav-icon span {
+	background-position: -104px 0;
+}
+
+.mui-control-item .list-nav-text {
+	text-align: center;
+	background: #58bf92;
+	color: #fff;
+	font-size: 18px;
+	padding: 10px 0;
+	line-height: 26px;
+	height: 46px;
+}
+
+.conference-status {
+	background: #58bf92;
+	overflow: hidden;
+}
+
+.conference-status ul {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.conference-status li {
+	list-style: none;
+	float: left;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 0.26rem;
+	padding: 0.2rem 0;
+	opacity: 0;
+}
+
+.conference-status li.mui-active {
+	opacity: 1;
+}
+
+.mui-control-item.mui-active {
+	background: #58bf92 !important;
+}
+
+.mui-control-item.list-nav-list-1.mui-active .list-nav-icon span {
+	background-position: 0 -52px;
+}
+
+.mui-control-item.list-nav-list-2.mui-active .list-nav-icon span {
+	background-position: -52px -52px;
+}
+
+.mui-control-item.list-nav-list-3.mui-active .list-nav-icon span {
+	background-position: -104px -52px;
+}
+
+.mui-slider-item .content {
+	position: relative;
+	height: auto;
+	border-bottom: 1px #58bf92 solid;
+	min-height: 3.3rem;
+	overflow: hidden;
+}
+
+.mui-slider-item .content img {
+	/*width: auto !important;*/
+	/*height: 100% !important;*/
+	/*max-height: 175px;*/
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+}
+
+.mui-slider-item .content .bottom-txt {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+}
+
+.mui-slider-item .content .list-tit {
+	color: #fff;
+	font-size: 14px;
+	float: left;
+	width: 70%;
+	line-height: 20px;
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.mui-slider-item .content .list-date {
+	color: #fff;
+	font-size: 12px;
+	float: right;
+	width: 30%;
+	line-height: 40px;
+	text-align: right;
+	position: absolute;
+	right: 5px;
+	top: 0;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+	border-bottom: none;
+}
+#item2mobile,#item1mobile,#item3mobile{
+	background: #fff;
+	/*border-bottom: 1px #0086B3 solid;*/
+}

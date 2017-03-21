@@ -12,20 +12,24 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
-			<form class="mui-input-row mui-input-group search">
-				<div class="search-box mui-icon mui-icon-search">
-					<input type="search">
+			<div class="mui-input-row mui-input-group search">
+				<div class="search-box mui-icon mui-icon-search"> 
+					<input type="search" placeholder="Search Events" class="mui-input-clear" id="search_ipt">
+					<button class="dl-btn" id="go_search" id="go_search">Search</button>
+					<ul class="mui-table-view toggle" id="toggle">
+						
+					</ul>
 				</div>
-			</form>
+			</div>
 			<div class="content-box">
-				<div class="happening">
+				<div class="happening" style="display:none;" id="box-0">
 					<div class="happening-banner">
-						<img src="images/happending-banner.jpg" alt="" />
+						<img src="images/blank.gif" id="pic-0" alt=""  data-preview-src="" data-preview-group="1"/>
 					</div>
 					<div class="happening-lists">
 						<div class="item" data-name = "agenda-1-0-1">
@@ -40,11 +44,11 @@
 							<h2 class="item-title">Material</h2>
 							<div class="item-icon"></div>
 						</div>
-						<div class="item" data-name = "chat">
+						<div class="item" data-name = "im-chat">
 							<h2 class="item-title">Chat</h2>
 							<div class="item-icon"></div>
 						</div>
-						<div class="item" data-name = "event">
+						<div class="item" data-name = "information">
 							<h2 class="item-title">Event Information</h2>
 							<div class="item-icon"></div>
 						</div>
@@ -54,9 +58,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="upcoming" style="display: none;">
+				<div class="upcoming" style="display: none;" id="box-1">
 					<div class="upcoming-banner">
-						<img src="images/upcoming.jpg" alt="" />
+						<img src="images/blank.gif" alt=""  id="pic-1" data-preview-src="" data-preview-group="2" />
 					</div>
 					<div class="upcoming-lists">
 						<div class="item" data-name = "agenda-1-0-1">
@@ -67,15 +71,15 @@
 							<h2 class="item-title">Networking</h2>
 							<div class="item-icon"></div>
 						</div>
-						<div class="item" data-name = "documentation">
-							<h2 class="item-title">Documentation</h2>
+						<div class="item" data-name = "material">
+							<h2 class="item-title">Material</h2>
 							<div class="item-icon"></div>
 						</div>
-						<div class="item" data-name = "chat">
+						<div class="item" data-name = "im-chat">
 							<h2 class="item-title">Chat</h2>
 							<div class="item-icon"></div>
 						</div>
-						<div class="item" data-name = "event">
+						<div class="item" data-name = "information">
 							<h2 class="item-title">Event Information</h2>
 							<div class="item-icon"></div>
 						</div>
@@ -86,16 +90,16 @@
 					</div>
 				</div>
 
-				<div class="past" style="display: none;">
+				<div class="past" style="display:none ;" id="box-2">
 					<div class="past-banner">
-						<img src="images/past-banner.jpg" alt="" />
+						<img src="images/blank.gif" id="pic-2" alt="" data-preview-src="" data-preview-group="3" />
 					</div>
 					<div class="past-lists">
 						<div class="item" data-name = "agenda-1-0-1">
 							<h2 class="item-title">Agenda</h2>
 							<div class="item-icon"></div>
 						</div>
-						<div class="item" data-name = "chat">
+						<div class="item" data-name = "im-chat">
 							<h2 class="item-title">Chat</h2>
 							<div class="item-icon"></div>
 						</div>
@@ -103,7 +107,7 @@
 							<h2 class="item-title">Networking</h2>
 							<div class="item-icon"></div>
 						</div>
-						<div class="item" data-name = "documentation">
+						<div class="item" data-name = "material">
 							<h2 class="item-title">Documentation</h2>
 							<div class="item-icon"></div>
 						</div>
@@ -112,8 +116,151 @@
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
-		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery-1.9.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/happening.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.zoom.js"></script>
+		<script src="js/mui.previewimage.js"></script>
+		<style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 9999999999;
+				background-color: #000;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			#pic-0,#pic-1,#pic-2 {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+		<script>
+			mui.previewImage();
+		</script>
 	</body>
 </html>

@@ -2,95 +2,17 @@ html,body,.mui-content{ background: #e5e6e6;}
 .green-bj{ height: 4.3rem; background: #58bf92;}
 .form{ width: 90%; margin: -4.3rem auto 0;}
 .form h2{ color: #fff; font-size: 0.34rem; font-weight: normal; line-height: 1.06rem; border-bottom: 1px solid #def2e9; margin: 0;}
-.radio-box{ overflow: hidden;}
-.radio{ float: left; width: 50%; clear: none;}
-.radio label{ font-size: 0.26rem; color: #fff;}
+.radio-box{ overflow: hidden; margin-top: 0.2rem;}
+.radio{ float: left; width: 50%; clear: none; height: 0.54rem;}
+.radio label{ font-size: 0.26rem; color: #fff; padding: 0 !important; padding-left: 50px !important; white-space: nowrap; line-height: 0.54rem; float: left !important;}
 .mui-checkbox input[type=checkbox], .mui-radio input[type=radio]{ width: 0.26rem; height: 0.26rem;}
 .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{ font-size: 0.26rem;}
-.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{ background: #fff; content: ""; display:block; border-radius: 50%; width: 0.26rem; height: 0.26rem;}
+.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{ background: #fff; content: ""; display:block; border-radius: 50%;  -webkit-border-radius: 50%; width: 0.26rem; height: 0.26rem;}
 .mui-checkbox input[type=checkbox], .mui-radio input[type=radio]{ top: 50%; margin-top: -0.13rem;}
 .mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{ content: ""; color: #fff; background: #0d54a3 url(../images/gx.png) center no-repeat; font-size: 20px; background-size:100% 100% ;}
-.text-area{ width: 90%; display: block; margin: 0 auto; position: relative;}
+.text-area{ width: 90%; display: block; margin: 0.2rem auto; position: relative;}
 .text-area textarea{ height: 5.68rem; font-size: 0.2rem; color: #0C0C0C; margin-bottom: 0;}
 .text-area .tip{ font-size: 0.26rem; position: absolute; top: 10px; left: 15px; color: #515151; padding-left: 0.34rem; line-height: 0.3rem;}
 .text-area .tip:before{ content: ""; display: block; width: 0.26rem; height: 0.26rem; position: absolute; left: 0; top: 0.02rem; background: url(../images/pen.png) center no-repeat; background-size: 100% 100%;}
 .text-area .total{ font-size: 0.22rem; position: absolute; right: 10px; bottom: 10px; color: #515151; line-height: 0.3rem;}
 .submit{ width: 84%; display: block; margin: 0.6rem auto; background: #58bf92; color: #fff;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

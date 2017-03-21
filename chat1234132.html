@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/groupchat.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
+			<h1 class="mui-title" id="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view chatBox" id="chatBox">
+				<li class="mui-table-view-cell myself "><div class="chat-content"><div class="chat-infor"><span class="infor"><b>username</b><b>百度科技</b></span><span class="time"><b class="iconfont icon-101"></b>2017-1-2</span></div><p class="chat-word">asdfhjhjk  hghfsg sg  l igskj adfasdfufa dj  sdf hjksdfasf  sfas jf kajsd sfas asdfasf</p></div><span class="user-photo"><img src="images/chat-user1.png"/></span> </li>
+				<li class="mui-table-view-cell other-people "><div class="chat-content"><div class="chat-infor"><span class="infor"><b>username</b><b>百度科技百度科技百度科技</b></span><span class="time"><b class="iconfont icon-101"></b>01-02 12:21:51</span></div><p class="chat-word">asdfhjhjk  hghfsg sg  l igskj adfasdfufa dj  sdf hjksdfasf  sfas jf kajsd sfas asdfasf</p></div><span class="user-photo"><img src="images/chat-user1.png"/></span> </li>
+		    </ul>
+		</div>
+		<div class="send-message-action">
+			<span class="iconfont icon-xiangji" id="takePhoto"></span>
+			<input type="text" class="messages" placeholder="Write your response..." id="messageText"></input>
+			<span class="iconfont icon-sendemail1" id="sendMessage"></span>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/public.js"></script>
+		<script src="lib/jquery-1.7.2.min.js"></script>
+		<script src="js/chat.js"></script>
+	</body>
+</html>

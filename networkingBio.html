@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/networkingBio.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<div class="speaker-basic-infor">
+				<div class="speaker-photo"><img src="images/blank.gif" id="face" /></div>
+				<div class="speaker-name" id="uname"></div>
+				<div class="speaker-other">
+					<span class="job" id="job"></span>
+					<span class="sex" id="sex"></span>
+					<span class="age" style="display: none;"></span>
+				</div>
+			</div>
+			<div class="speaker-detail-infor">
+				<div class="title">
+					<div class="title-left">Title</div>
+					<div class="title-right">
+						<p id="title1"></p>
+					</div>
+				</div>
+				<div class="company">
+					<div class="title-left">Company</div>
+					<div class="title-right">
+						<p id="title2"></p>
+					</div>
+				</div>
+				<div class="cont" style="display: none;">
+					<div class="title-left">&nbsp;</div>
+					<div class="title-right">
+						<p id="title2">Contact</p>
+					</div>
+				</div>
+				<div class="contact">
+					<div class="contact-introduce" id="content"></div>
+				</div>
+
+			</div>
+			<button type="button" class="mui-btn send-message" id="send">Send Message</button>
+			<div class="infor-part infor-experience" id="infor-part">
+				<div class="infor-part-title">
+					<span><img src="images/Experience.png" class="experience"/></span>
+					Biography
+
+				</div>
+
+				<ul class="mui-table-view" id="exp">
+
+				</ul>
+
+			</div>
+		</div>
+
+
+		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/networkingBio.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

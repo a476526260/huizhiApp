@@ -1,6 +1,8 @@
-mui.init();
+mui.init({swipeBack: true});
 mui.plusReady(function() {
-	$(".text-area textarea").each(function() { 
+	var currentWindow = plus.webview.currentWebview();
+	document.getElementById("bname").innerText = currentWindow.bname
+	$(".text-area textarea").each(function() {
         var thisVal = $(this).val();
         //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
         if (thisVal != "") {
@@ -9,7 +11,7 @@ mui.plusReady(function() {
             $(this).siblings(".tip").show();
         };
         //聚焦型文本框验证
-        $(this).focus(function() { 
+        $(this).focus(function() {
             $(this).siblings(".tip").hide();
         }).blur(function() {
             var val = $(this).val();
@@ -21,7 +23,7 @@ mui.plusReady(function() {
         });
 
         $(this).on("input",function(){
-        	var len=$(this).val().length; 
+        	var len=$(this).val().length;
         	len>200?200:len;
         	$(".total").text(200-len)
         });
@@ -35,12 +37,14 @@ mui.plusReady(function() {
 			}
 		});
 		if (document.getElementById("feedback-word").value.length<10) {
-			alert('字数不能小于10')
+			mui.alert('Please input no less than 10 characters')
 		} else{
-			mui.ajax("http://z.cqboy.com/index.php/Api/api/feedback", {
+			mui.ajax(domain + "/index.php/Api/api/feedback", {
 				data: {
-					tid:localStorage.getItem('TOKEN_ID'),
-					tog:localStorage.getItem('TOKEN_LOGIN'),
+					key: key,
+					ver: ver,
+					token:localStorage.getItem("TOKEN_LOGIN"),
+					uid:localStorage.getItem("TOKEN_UID"),
 					content:document.getElementById("feedback-word").value,
 					types:radio_d
 				},
@@ -51,6 +55,10 @@ mui.plusReady(function() {
 					if(result.status == 0) {
 						mui.toast(result.msg)
 						document.getElementById("feedback-word").value=''
+						$(".total").text(200);
+						setTimeout(function(){
+							mui.back()
+						},1500)
 					}
 				},
 				error: function(xhr, type, errorThrown) {

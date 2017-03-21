@@ -1,27 +1,27 @@
 html,body,.mui-content{ background: #e5e6e6;}
 .user-infor-look{ background: #58bf92; padding:5%; overflow: hidden; display: box; display: -webkit-box; -webkit-box-align: center; box-align:center;}
-.user-infor-photo{ width: 25%; border-radius: 50%; border: 0.08rem solid rgba(255,255,255,0.38); box-sizing: border-box; position:relative;}
-.user-infor-photo #face{ width: 100%; border-radius: 50%;}
+.user-infor-photo{ width: 1.3rem; height: 1.3rem; border-radius: 50%;  -webkit-border-radius: 50%;border: 0.08rem solid rgba(255,255,255,0.38); box-sizing: border-box; position:relative;}
+.user-infor-photo #face{ width: 100%; height: 100%; border-radius: 50%; -webkit-border-radius: 50%;}
 .user-infor-photo #pen{ position:absolute; bottom:-10%; right:-30%; width:40%;}
 .user-infor-text{ width: 70%; margin-left: 5%;}
-.user-name{ color: #fff; font-size: 0.28rem;}
-.user-name span{ float: right; color: #58bf92; padding: 0 5px; border-radius: 4px; background: #fff;}
+.user-name{ color: #535353; font-size: 0.28rem;}
+.user-name span{ float: right; color: #58bf92; padding: 0 5px; border-radius: 4px;  -webkit-border-radius: 4px;background: #fff;}
 .user-level .need{ color: #fff; font-size: 0.22rem;}
 .user-level .need span{ float: right;}
-.progressbar{ height: 0.14rem; background: rgba(255,255,255,0.4); border-radius: 0.07rem; margin-top: 5px;}
+.progressbar{ height: 0.14rem; background: rgba(255,255,255,0.4); border-radius: 0.07rem;  -webkit-border-radius: 0.07rem;margin-top: 5px;}
 .progressbar span{ display: block; width: 70%; height: 0.14rem; background: #fff; border-radius: 0.07rem;}
 .continuous{ background: #8ad2b3; padding: 4% 5%; overflow: hidden;display: box; display: -webkit-box; -webkit-box-align: center; box-align:center;}
 .continuous .continuous-land{ font-size: 0.22rem; color: #fff; width: 40%; height: 0.56rem; line-height: 0.56rem; border: 1px solid #fff; text-align: center;}
 .continuous p{ font-size: 0.18rem; color: #fff; line-height: 0.2rem; width: 60%; padding-left: 0.2rem; margin: 0; box-sizing: border-box;}
-.basic-infor{ width: 90%; margin: 0.2rem auto 0; background: #fff; border-radius: 5px;}
+.basic-infor{ width: 90%; margin: 0.2rem auto 0; background: #fff; border-radius: 5px; -webkit-border-radius: 5px;}
 .basic-infor dt{ height: 1rem; font-size: 0.36rem; line-height: 1rem; color: #58bf92; text-indent: 0.4rem;}
 .basic-infor dd{ min-height: 1rem; line-height: 1rem; border-top: 1px solid #e5e6e6; margin: 0; overflow: hidden; overflow: hidden;}
-.basic-infor dd span{ font-size: 0.26rem;}
+.basic-infor dd span{ font-size: 0.26rem; white-space: normal; }
+.basic-infor dd span input{ margin: -0.2rem 0 0 0; padding: 0 1%; line-height: 24px;}
 .infor-title{ float: left; color: #1b1b1b; text-indent: 0.4rem; width: 35%;}
 .infor-detail{ float: left; color: #767676; width: 62%; padding: 0 1%; margin-top: 0.3rem;line-height: 24px; border: 1px #fff solid;}
 .infor-detail label{ width:49%; display:inline-block;}
-.modify{ width: 80%; margin: 0 auto; background: #373737; border: none; color: #fff; font-size: 0.26rem; padding: 10px 0; border-radius: 5px; margin: 0.46rem auto;}
-
+.modify{ width: 80%; margin: 0 auto; background: #373737; border: none; color: #fff; font-size: 0.26rem; padding: 10px 0; border-radius: 5px; -webkit-border-radius: 5px; margin: 0.46rem auto;}
 
 
 

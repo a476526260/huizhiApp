@@ -13,14 +13,14 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
 			<div class="agenda-banner">
 				<img src="" id="agendaBanner">
-			</div>
+			</div> 
 			<ul class="mui-table-view conference-infor-list">
 				<li class="mui-table-view-cell conference-item-1">
 					<span class="mui-icon iconfont icon-rili"></span>
@@ -32,7 +32,7 @@
 				</li>
 			</ul>
 			<div class="mui-slider day-slide">
-				<div class="mui-slider-group">
+				<div class="mui-slider-group" id="slide-box">
 					<!--第一个内容区容器-->
 					<div class="mui-slider-item">
 						<div class="sort-title">DAY 1 <span class="mui-icon mui-icon-arrowright arrowright"></span></div>
@@ -44,44 +44,21 @@
 					<div class="mui-slider-item">
 						<div class="sort-title">DAY 2<span class="mui-icon mui-icon-arrowright arrowright"></span></div>
 						<ul class="mui-table-view sort-content-list" id="content_2">
-							<li class="mui-table-view-cell">
-								<h3 class="trip-title">
-									<span class="time">17:20</span>
-					            	<span class="thing">Laser welding technology in the application in the field of int</span>
-								</h3>
-								<div class="speaker">
-									<span class="speaker-icon iconfont icon-wodeicon"></span>
-									<span class="speaker-infor">
-										<b class="name">Pan Yu</b>
-										<b class="company">Global manufacturing technical project manager <span class=" mui-icon mui-icon-arrowright"></span></b>
-									</span>
-								</div>
-							</li>
-							<li class="mui-table-view-cell">
-								<h3 class="trip-title">
-									<span class="time">17:55</span>
-					            	<span class="thing">The first day of the meeting</span>
-								</h3>
-							</li>
 						</ul>
 						<div class="wirte-down"><img src="images/write-down.png"/></div>
 					</div>
 				</div>
 			</div>
 			<div class="btn-group">
-				<button class="mui-btn mui-btn-green mui-pull-left">Join Now</button>
-				<button class="mui-btn mui-btn-green mui-pull-right">+Calendar</button>
+				<button class="mui-btn mui-btn-green " id="join">Add to my events</button>
+				<button class="mui-btn mui-btn-green mui-pull-right" style="display: none;">+Calendar</button>
 		    </div>
 		</div>
 
 		<script src="js/mui.min.js"></script>
-		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/agenda.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			mui.init()
-
-		</script>
+		<script src="lib/jquery-1.9.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js"></script>
+		<script src="js/agenda.js"></script> 
 	</body>
 
 </html>

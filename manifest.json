@@ -1,25 +1,23 @@
 {
 	"@platforms": ["android", "iPhone", "iPad"],
 	"id": "H50BC866A",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "App开发",/*应用名称，程序桌面图标名称*/
+	"name": "Bizev",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.0.0",/*应用版本名称*/
+		"name": "1.2.1",/*应用版本名称*/
 		"code": "83"
 	},
-	"description": "",/*应用描述信息*/
+	"description": "Bizev APP is an international online platform designed for business people or companies who share a common need to acquire the updated news of hot commercial events and sign up for the interested ones. With the deep researching and evaluation of hot spots and the application of advanced technologies in the current marketing industries, Bizev selects and posts the key information of excellent offline events upcoming, so that people or companies having the same interests in a specific one can discuss the associated topics together and learn from each other. Besides, Bizev can also help extend users’ social networking, provide potential opportunities for mutual cooperation and finally drive the development of the targeted business. Bizev classifies business activities host in different time periods by their themes. Users can search, inquire, and choose to join in activities according to individual or companies’ needs. Then Bizev will closely keep inform you of the information of the event to participate. With the combined work of the knowledge learnt online and the real participation in offline activities, attendees’ insights and experiences will be greatly improved. What’s more, this APP provides users’ business card information and enables users to communicate with others freely so as to best widen your social circles and enhance personal values.",/*应用描述信息*/
 	"icons": {
 		"72": "icon.png"
 	},
 	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
-		"name": "",/*开发者名称*/
-		"email": "",/*开发者邮箱地址*/
-		"url": "http://www.dcloud.io"
+		"name": "Shanghai Huizhi Networking Technology Co., Ltd.",/*开发者名称*/
+		"email": "shbizev@hotmail.com",/*开发者邮箱地址*/
+		"url": "https://www.shbizev.com"
 	},
 	"permissions": {
-		"Accelerometer": {
-            "description": "访问加速度感应器"
-        },
+		"Accelerometer": {},
         "Audio": {
             "description": "访问麦克风"
         },
@@ -56,9 +54,7 @@
          "Invocation": {
             "description": "使用Native.js能力"
         },
-        "Messaging": {
-            "description": "访问通讯能力"
-        },
+
         "Orientation": {
             "description": "访问方向感应器"
         },
@@ -72,9 +68,7 @@
         "Uploader": {
             "description": "管理文件上传任务"
         },
-        "Runtime": {
-            "description": "访问运行期环境"
-        },
+        "Runtime": {},
         "XMLHttpRequest": {
             "description": "跨域网络访问"
         },
@@ -84,15 +78,11 @@
         "Barcode": {
             "description": "管理二维码扫描插件"
         },
-        "Maps": {
-            "description": "管理地图插件"
-        },
+        
         "Speech": {
             "description": "管理语音识别插件"
         },
-        "Webview":{
-        	"description": "窗口管理"
-        },
+        "Webview":{},
         "NativeUI":{
         	"description": "原生UI控件"
         },
@@ -101,16 +91,19 @@
         },
         "NativeObj":{
         	"description": "原生对象"
-        }
+        },"Push":{},"Maps":{},"Statistic":{}
 	},
 	"plus": {
+		"statusbar":{
+			"immersed":false
+		},
 		"splashscreen": {
 			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
 			"waiting": true
 		},
-		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {
+		"distribute": {"plugins":{"maps":{"baidu":{"appkey_ios":"Qh7pYUkzDGDbGM7VNR60QYuXLfVhBErP","appkey_android":"YPvxhoA5XgzHR7jsfNtnrcEGGPQp8sXf","appkey":"","description":""}},"statics":{"umeng":{"appkey_ios":"5947f52e5312dd368e000a43","channelid_ios":"bizevIos","appkey_android":"5947f4a7310c9323ec001ba1","channelid_android":"bizevAndroid"}},"push":{"igexin":{"appid":"uEcw53IxrVAlLgzmN58b","appkey":"QpTy4strFhAqiywoMvF20A","appsecret":"WZ8jfsuTno9pE0HM7Agdx8"}}},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
@@ -124,50 +117,50 @@
 				"keystore": "",/*Android应用打包使用的密钥库文件*/
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"]
+				"permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.GET_TASKS\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_GSERVICES\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
 			},
-			"orientation": ["portrait-primary", "portrait-secondary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"orientation": ["portrait-primary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
 			"icons": {
 				"ios": {
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
 					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
 					"iphone": {
-						"normal": "",/*iPhone普通屏幕程序图标，分辨率：57x57*/
-						"retina": "",/*iPhone高分屏程序图标，分辨率：114x114*/
-						"retina7": "",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
-						"spotlight-normal": "", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
-						"spotlight-retina": "", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
-						"spotlight-retina7": "",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						"settings-normal": "", /*iPhone设置页面程序图标，分辨率：29x29*/
-						"settings-retina": ""
+						"normal": "unpackage/res/icons/57x57.png",/*iPhone普通屏幕程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png",/*iPhone高分屏程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png","retina8":"unpackage/res/icons/180x180.png","settings-retina8":"unpackage/res/icons/87x87.png"
 					},
 					"ipad": {
-						"normal": "", /*iPad普通屏幕程序图标，分辨率：72x72*/
-						"retina": "", /*iPad高分屏程序图标，分辨率：144x144*/
-						"normal7": "", /*iPad iOS7程序图标，分辨率：76x76*/
-						"retina7": "", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
-						"spotlight-normal": "", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
-						"spotlight-retina": "", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
-						"spotlight-normal7": "",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
-						"spotlight-retina7": "",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						"settings-normal": "",/*iPad设置页面程序图标，分辨率：29x29*/
-						"settings-retina": ""
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
 					}
 				},
 				"android": {
-					"mdpi": "", /*普通屏程序图标，分辨率：48x48*/
-					"ldpi": "", /*大屏程序图标，分辨率：48x48*/
-					"hdpi": "", /*高分屏程序图标，分辨率：72x72*/
-					"xhdpi": "",/*720P高分屏程序图标，分辨率：96x96*/
-					"xxhdpi": ""
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png","xxxhdpi":"unpackage/res/icons/192x192.png"
 				}
 			},
 			"splashscreen": {
 				"ios": {
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": ""
+						"retina35": "images/640X1136.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "images/640X1136.png","retina55":"images/1242x2208.png","retina47":"images/750X1334.png"
 					},
 					"ipad": {
 						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
@@ -183,11 +176,11 @@
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": ""
+					"hdpi": "images/480X762.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "images/720X1242.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "images/1080x1882.png"
 				}
-			}
+			},"debug":false
 		}
 	},
 	"dependencies": {
@@ -222,7 +215,8 @@
 					"images/index-b2.jpg",
 					"css/indexbody.css",
 					"js/indexbody.js",
-					"js/index.js"
+					"js/index.js",
+					"css/mui.css"
 				],
 				"refer": [
 					"reset.html",
@@ -234,7 +228,9 @@
 					"agenda.html",
 					"Myevents-03.html",
 					"Myevents-3.html",
-					"groupChat.html"
+					"groupChat.html",
+					"chat.html",
+					"me-myevent.html"
 				],
 				"priority": 0
 			},
@@ -255,13 +251,17 @@
 					"images/index-s3.jpg",
 					"images/logo.png",
 					"css/public.css",
-					"js/public.js"
+					"js/public.js",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png"
 				],
 				"refer": [
 					"happening.html",
 					"reset.html",
 					"upComing.html",
-					"agenda.html"
+					"agenda.html",
+					"search.html"
 				],
 				"priority": 0
 			},
@@ -277,9 +277,13 @@
 					"lib/jquery-1.9.0.js",
 					"js/register.js",
 					"js/public.js",
-					"js/register_2.js"
+					"js/register_2.js",
+					"images/companyLogo.png"
 				],
-				"refer": [],
+				"refer": [
+					"signIn.html",
+					"me-myevent.html"
+				],
 				"priority": 0
 			},
 			"reset.html": {
@@ -295,7 +299,9 @@
 					"lib/jquery-1.7.2.min.js",
 					"images/close-btn.png"
 				],
-				"refer": [],
+				"refer": [
+					"signIn.html"
+				],
 				"priority": 0
 			},
 			"list.html": {
@@ -315,9 +321,14 @@
 					"js/public.js",
 					"js/mui.js",
 					"lib/dropload.min.js",
-					"css/dropload.css"
+					"css/dropload.css",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png"
 				],
-				"refer": [],
+				"refer": [
+					"happening.html"
+				],
 				"priority": 0
 			},
 			"signIn.html": {
@@ -330,11 +341,14 @@
 					"js/signIn.js",
 					"images/close-btn.png",
 					"js/public.js",
-					"lib/jquery-1.7.2.min.js"
+					"lib/jquery-1.7.2.min.js",
+					"images/photo.png"
 				],
 				"refer": [
 					"resetPassword.html",
-					"register.html"
+					"register.html",
+					"me-myevent.html",
+					"indexbody.html"
 				],
 				"priority": 0
 			},
@@ -360,14 +374,25 @@
 					"lib/jquery-1.9.0.js",
 					"lib/jquery-1.7.2.min.js",
 					"js/happening.js",
-					"js/public.js"
+					"js/public.js",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"images/blank.gif",
+					"js/mui.zoom.js",
+					"js/mui.previewimage.js"
 				],
 				"refer": [
 					"networking.html",
 					"material.html",
 					"agenda.html",
 					"layout.html",
-					"agenda-1-0-1.html"
+					"agenda-1-0-1.html",
+					"search.html",
+					"information.html",
+					"happening.html",
+					"map.html",
+					"im-chat.html"
 				],
 				"priority": 0
 			},
@@ -381,9 +406,13 @@
 					"fonts/iconfont.ttf",
 					"css/public.css",
 					"images/m.png",
-					"css/iconfont.css"
+					"css/iconfont.css",
+					"js/public.js",
+					"images/blank.gif"
 				],
-				"refer": [],
+				"refer": [
+					"map.html"
+				],
 				"priority": 0
 			},
 			"upComing.html": {
@@ -442,9 +471,16 @@
 					"css/mui.min.css",
 					"images/speaker-title.png",
 					"css/public.css",
-					"css/speakers.css"
+					"css/speakers.css",
+					"js/public.js",
+					"js/speaker.js",
+					"lib/jquery-1.7.2.min.js",
+					"images/blank.gif"
 				],
-				"refer": [],
+				"refer": [
+					"im-chat.html",
+					"getPdf.html"
+				],
 				"priority": 0
 			},
 			"networking.html": {
@@ -462,9 +498,17 @@
 					"images/networking-chat.png",
 					"js/networking.js",
 					"js/public.js",
-					"lib/jquery-1.7.2.min.js"
+					"lib/jquery-1.7.2.min.js",
+					"lib/dropload.min.js",
+					"css/dropload.css",
+					"images/networking-heart-2.png",
+					"networking.html"
 				],
-				"refer": [],
+				"refer": [
+					"im-chat.html",
+					"networkingBio.html",
+					"Speakers.html"
+				],
 				"priority": 0
 			},
 			"material.html": {
@@ -481,9 +525,40 @@
 					"css/material.css",
 					"js/material.js",
 					"js/public.js",
-					"lib/jquery-1.7.2.min.js"
+					"lib/jquery-1.7.2.min.js",
+					"images/ext_jpg.png",
+					"images/ext_pdf.png",
+					"images/ext_pptx.png",
+					"images/Downloads.png",
+					"web/build/pdf.js",
+					"images/open.png",
+					"web/build/pdf.worker.js",
+					"build/pdf.js",
+					"build/pdf.worker.js",
+					"web/a.pdf",
+					"web/595b0bfb9d6a3.pdf",
+					"web/compatibility.js",
+					"web/images/toolbarButton-viewAttachments@2x.png",
+					"web/images/toolbarButton-pageUp@2x.png",
+					"web/images/toolbarButton-secondaryToolbarToggle@2x.png",
+					"web/images/toolbarButton-pageDown@2x.png",
+					"web/images/texture.png",
+					"web/debugger.js",
+					"web/images/toolbarButton-menuArrows@2x.png",
+					"web/images/toolbarButton-zoomOut@2x.png",
+					"web/images/toolbarButton-zoomIn@2x.png",
+					"web/images/toolbarButton-viewThumbnail@2x.png",
+					"web/l10n.js",
+					"web/images/toolbarButton-sidebarToggle@2x.png",
+					"web/viewer.js",
+					"web/viewer.html",
+					"web/viewer.css",
+					"web/images/toolbarButton-viewOutline@2x.png",
+					"viewer.html"
 				],
-				"refer": [],
+				"refer": [
+					"getPdf.html"
+				],
 				"priority": 0
 			},
 			"groupChat.html": {
@@ -524,9 +599,16 @@
 					"css/public.css",
 					"images/information-banner.jpg",
 					"images/partner.png",
-					"css/information.css"
+					"css/information.css",
+					"js/information.js",
+					"js/public.js",
+					"lib/jquery-1.7.2.min.js",
+					"images/blank.gif",
+					"images/level-0.png"
 				],
-				"refer": [],
+				"refer": [
+					"companyProfile.html"
+				],
 				"priority": 0
 			},
 			"companyProfile.html": {
@@ -537,7 +619,9 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"css/public.css",
-					"images/profile-banner.jpg"
+					"images/profile-banner.jpg",
+					"js/public.js",
+					"images/blank.gif"
 				],
 				"refer": [],
 				"priority": 0
@@ -550,7 +634,15 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"css/public.css",
-					"css/updateProfileLook.css"
+					"css/updateProfileLook.css",
+					"js/updateProfileLook.js",
+					"images/blank.gif",
+					"images/pen2.png",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"lib/jquery-1.7.2.min.js",
+					"js/public.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -568,7 +660,11 @@
 					"lib/jquery-1.7.2.min.js",
 					"images/pen.png",
 					"images/gx.png",
-					"js/feedback.js"
+					"js/feedback.js",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"js/public.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -596,10 +692,10 @@
 					"lib/jquery-1.9.0.js",
 					"css/mui.min.css",
 					"images/companyLogo.png",
-					"images/close-btn.png"
+					"images/close-btn.png",
+					"resetPassword.html"
 				],
 				"refer": [
-					"resetPassword.html",
 					"reset.html"
 				],
 				"priority": 0
@@ -617,7 +713,8 @@
 				],
 				"refer": [
 					"register_2.html",
-					"signIn.html"
+					"signIn.html",
+					"me-myevent.html"
 				],
 				"priority": 0
 			},
@@ -634,9 +731,12 @@
 					"css/mui.min.css",
 					"fonts/iconfont.ttf",
 					"css/public.css",
-					"lib/jquery-1.7.2.min.js"
+					"lib/jquery-1.7.2.min.js",
+					"lib/jquery-1.9.0.js"
 				],
-				"refer": [],
+				"refer": [
+					"Speakers.html"
+				],
 				"priority": 0
 			},
 			"Myevents-3.html": {
@@ -651,12 +751,26 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"css/public.css"
+					"css/public.css",
+					"images/icon-a.png",
+					"images/icon-b.png",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"images/icon-l.png",
+					"images/icon-p.png"
 				],
 				"refer": [
 					"updateProfile.html",
 					"cv.html",
-					"feedback.html"
+					"feedback.html",
+					"my-contact.html",
+					"biography.html",
+					"Myevents-1.html",
+					"updateProfileLook.html",
+					"aboutus.html",
+					"me-myevent.html",
+					"changePassword.html"
 				],
 				"priority": 0
 			},
@@ -686,12 +800,689 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"chat.html": {
+				"resources": [
+					"js/chat.js",
+					"images/chat-left.png",
+					"css/groupchat.css",
+					"js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"map.html": {
+				"resources": [
+					"images/map.jpg",
+					"css/map.css",
+					"images/logo.png",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"js/public.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/public.css",
+					"js/convertor.js",
+					"images/blank.gif",
+					"images/loading.gif"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"me-myevent.html": {
+				"resources": [
+					"css/meMyevents.css",
+					"js/contacts.js",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"js/public.js",
+					"css/mui.min.css",
+					"css/public.css",
+					"lib/jquery-1.7.2.min.js",
+					"images/logo.png",
+					"fonts/mui.ttf",
+					"fonts/iconfont.ttf",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"images/networking-chat.png",
+					"images/networking-heart.png",
+					"js/message.js"
+				],
+				"refer": [
+					"im-chat.html",
+					"happening.html",
+					"networkingBio.html"
+				],
+				"priority": 0
+			},
+			"im-chat.html": {
+				"resources": [
+					"js/mui.imageViewer.js",
+					"css/im-chat.css",
+					"js/im-chat.js",
+					"css/mui.imageviewer.css",
+					"js/arttmpl.js",
+					"fonts/mui.ttf",
+					"js/public.js",
+					"css/public.css",
+					"images/logo.png",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"fonts/iconfont.ttf",
+					"lib/dropload.min.js",
+					"lib/jquery-1.7.2.min.js",
+					"css/dropload.css",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"js/mui.pullToRefresh.js",
+					"js/mui.pullToRefresh.material.js",
+					"css/pulltorefresh.css",
+					"pullrefresh_sub.html",
+					"im-chat_sub.html"
+				],
+				"refer": [
+					"my-contact.html",
+					"me-myevent.html"
+				],
+				"priority": 0
+			},
+			"my-contact.html": {
+				"resources": [
+					"js/contacts.js",
+					"js/public.js",
+					"lib/jquery-1.7.2.min.js",
+					"images/networking-chat.png",
+					"css/meMyevents.css",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/public.css",
+					"images/logo.png",
+					"fonts/mui.ttf",
+					"fonts/iconfont.ttf",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"images/networking-heart.png",
+					"css/my-contact.css",
+					"images/networking-heart-2.png"
+				],
+				"refer": [
+					"im-chat.html",
+					"networkingBio.html"
+				],
+				"priority": 0
+			},
+			"biography.html": {
+				"resources": [
+					"css/cv.css",
+					"images/bio.png",
+					"js/biography.js",
+					"images/about_logo.png",
+					"js/mui.picker.min.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.picker.min.css",
+					"images/cv-icon.jpg",
+					"fonts/mui.ttf",
+					"js/public.js",
+					"css/public.css",
+					"images/icon-e.png",
+					"images/logo.png",
+					"css/mui.min.css",
+					"lib/jquery-1.7.2.min.js",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"Myevents-1.html": {
+				"resources": [
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/public.css",
+					"css/myevents.css",
+					"js/public.js",
+					"lib/jquery-1.7.2.min.js",
+					"images/logo.png"
+				],
+				"refer": [
+					"happening.html"
+				],
+				"priority": 0
+			},
+			"search.html": {
+				"resources": [
+					"lib/dropload.min.js",
+					"lib/jquery-1.7.2.min.js",
+					"js/mui.js",
+					"js/search.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/public.css",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"css/dropload.css",
+					"css/list.css",
+					"images/icons.png",
+					"js/public.js",
+					"images/logo.png",
+					"css/list2.css",
+					"js/mui.pullToRefresh.js"
+				],
+				"refer": [
+					"happening.html"
+				],
+				"priority": 0
+			},
+			"networkingBio.html": {
+				"resources": [
+					"css/networkingBio.css",
+					"js/networkingBio.js",
+					"images/speaker-company.png",
+					"js/mui.min.js",
+					"js/public.js",
+					"images/Experience.png",
+					"css/mui.min.css",
+					"css/public.css",
+					"lib/jquery-1.7.2.min.js",
+					"images/blank.gif",
+					"images/networkingBio-company.png",
+					"images/speaker-title.png",
+					"fonts/mui.ttf",
+					"images/logo.png",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"images/cv-icon.jpg"
+				],
+				"refer": [
+					"im-chat.html"
+				],
+				"priority": 0
+			},
+			"aboutus.html": {
+				"resources": [
+					"images/about_logo.png",
+					"css/aboutus.css",
+					"js/aboutus.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/public.css",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"js/mui.min.js",
+					"lib/jquery-1.7.2.min.js",
+					"js/public.js",
+					"images/logo.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"changePassword.html": {
+				"resources": [
+					"css/changePassword.css",
+					"js/changePassword.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/public.css",
+					"images/happening.png",
+					"images/upcoming.png",
+					"images/past.png",
+					"js/mui.min.js",
+					"lib/jquery-1.7.2.min.js",
+					"js/public.js",
+					"images/logo.png",
+					"images/blank.gif",
+					"images/icon-c.png"
+				],
+				"refer": [
+					"me-myevent.html"
+				],
+				"priority": 0
+			},
+			"viewer.html": {
+				"resources": [
+					"web/images/toolbarButton-sidebarToggle@2x.png",
+					"web/images/toolbarButton-viewAttachments@2x.png",
+					"web/images/toolbarButton-menuArrows@2x.png",
+					"web/images/toolbarButton-zoomOut@2x.png",
+					"web/images/toolbarButton-zoomIn@2x.png",
+					"web/images/toolbarButton-pageUp@2x.png",
+					"web/images/toolbarButton-viewOutline@2x.png",
+					"web/images/toolbarButton-viewThumbnail@2x.png",
+					"web/images/texture.png",
+					"web/images/toolbarButton-secondaryToolbarToggle@2x.png",
+					"web/images/toolbarButton-pageDown@2x.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"web/viewer.html": {
+				"resources": [
+					"web/debugger.js",
+					"web/compatibility.js",
+					"web/images/toolbarButton-viewAttachments@2x.png",
+					"web/images/toolbarButton-menuArrows@2x.png",
+					"web/locale/zh-CN/viewer.properties",
+					"web/images/toolbarButton-zoomOut@2x.png",
+					"web/images/toolbarButton-zoomIn@2x.png",
+					"web/locale/locale.properties",
+					"web/images/toolbarButton-pageUp@2x.png",
+					"web/images/toolbarButton-viewThumbnail@2x.png",
+					"web/images/toolbarButton-secondaryToolbarToggle@2x.png",
+					"web/images/toolbarButton-pageDown@2x.png",
+					"web/l10n.js",
+					"web/images/toolbarButton-sidebarToggle@2x.png",
+					"build/pdf.worker.js",
+					"web/viewer.js",
+					"web/viewer.css",
+					"web/images/toolbarButton-viewOutline@2x.png",
+					"web/images/texture.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"getPdf.html": {
+				"resources": [
+					"images/logo.png",
+					"js/mui.min.js",
+					"js/public.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/public.css",
+					"lib/jquery-1.7.2.min.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"im-chat_sub.html": {
+				"resources": [
+					"js/mui.pullToRefresh.js",
+					"css/im-chat.css",
+					"js/mui.pullToRefresh.material.js",
+					"fonts/mui.ttf",
+					"js/im-chat.js",
+					"css/mui.imageviewer.css",
+					"js/public.js",
+					"css/public.css",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"fonts/iconfont.ttf",
+					"lib/jquery-1.7.2.min.js",
+					"css/dropload.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"pullrefresh_sub.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/public.js",
+					"lib/jquery-1.7.2.min.js",
+					"css/im-chat.css",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf",
+					"css/public.css",
+					"css/mui.imageviewer.css",
+					"css/dropload.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
-				"css/mui.css"
+				"chatFaces/ee_16.png",
+				"chatFaces/ee_22.png",
+				"images/_notes/ext_pdf.png.mno",
+				"chatFaces/ee_9.png",
+				"images/_notes/ext_gif.png.mno",
+				"chatjs/strophe-1.2.8.js",
+				"LICENSE",
+				"a.html",
+				"chatFaces/ee_11.png",
+				"im-chat-20170731.html",
+				"images/clock.png",
+				"chatFaces/ee_10.png",
+				"agenda-1-0-2.html",
+				"chatjs/websdk.shim.js",
+				"images/1242x2208.png",
+				"groupChat-n.html",
+				"chatFaces/ee_29.png",
+				"demo.html",
+				"chatFaces/ee_13.png",
+				"images/face_full.png",
+				"chatFaces/ee_26.png",
+				"js/demo-1.4.10.js",
+				"js/im-chat2.js",
+				"lib/zepto.min.js",
+				"chatFaces/ee_8.png",
+				"chatFaces/ee_5.png",
+				"chatjs/websdk-1.4.10.js",
+				"Myevents-2.html",
+				"chatFaces/ee_2.png",
+				"chatFaces/ee_27.png",
+				"images/640X1136.png",
+				"images/nofounding.png",
+				"chatFaces/ee_15.png",
+				"lib/pinchzoom.min.js",
+				"chatFaces/ee_14.png",
+				"chat1234132.html",
+				"images/myevents-img.jpg",
+				"images/ext_ppt.png",
+				"chatFaces/ee_19.png",
+				"chatjs/websdk-1.4.10.min.js",
+				"chatFaces/ee_1.png",
+				"chatFaces/ee_21.png",
+				"images/logo256X256.png",
+				"Connection-Error.html",
+				"images/ext_gif.png",
+				"js/im-chat2017-0731.js",
+				"images/750X1334.png",
+				"chatFaces/ee_20.png",
+				"images/default_1.png",
+				"images/ext_pdf.fw.png",
+				"images/480X762.png",
+				"chatFaces/ee_34.png",
+				"chatFaces/ee_35.png",
+				"chatFaces/ee_17.png",
+				"chatFaces/ee_32.png",
+				"chatFaces/ee_18.png",
+				"images/refresh.png",
+				"images/we-code.png",
+				"chatjs/webim.config.js",
+				"logo.png",
+				"chatFaces/ee_30.png",
+				"chatFaces/ee_7.png",
+				"agenda-1-0-3.html",
+				"chatFaces/ee_3.png",
+				"images/default_2.png",
+				"images/_notes/ext_pptx.png.mno",
+				"chatjs/strophe-1.2.8.min.js",
+				"chatFaces/ee_33.png",
+				"chatFaces/ee_28.png",
+				"images/default_0.png",
+				"chatFaces/ee_25.png",
+				"chatFaces/ee_12.png",
+				"images/_notes/ext_jpg.png.mno",
+				"images/face.png",
+				"images/_notes/ext_ppt.png.mno",
+				"images/1080x1882.png",
+				"chatFaces/ee_24.png",
+				"chatFaces/ee_6.png",
+				"chatFaces/ee_23.png",
+				"chatFaces/ee_4.png",
+				"images/720X1242.png",
+				"images/ext_av.png",
+				"chatFaces/ee_31.png"
 			]
 		}
-	}
+	},"fullscreen":false,
+	"unpackage":[
+	  "css/mui.css",
+	  "chatFaces/ee_1.png",
+	  "chatFaces/ee_10.png",
+	  "chatFaces/ee_11.png",
+	  "chatFaces/ee_12.png",
+	  "chatFaces/ee_13.png",
+	  "chatFaces/ee_14.png",
+	  "chatFaces/ee_15.png",
+	  "chatFaces/ee_16.png",
+	  "chatFaces/ee_17.png",
+	  "chatFaces/ee_18.png",
+	  "chatFaces/ee_19.png",
+	  "chatFaces/ee_2.png",
+	  "chatFaces/ee_20.png",
+	  "chatFaces/ee_21.png",
+	  "chatFaces/ee_22.png",
+	  "chatFaces/ee_23.png",
+	  "chatFaces/ee_24.png",
+	  "chatFaces/ee_25.png",
+	  "chatFaces/ee_26.png",
+	  "chatFaces/ee_27.png",
+	  "chatFaces/ee_28.png",
+	  "chatFaces/ee_29.png",
+	  "chatFaces/ee_3.png",
+	  "chatFaces/ee_30.png",
+	  "chatFaces/ee_31.png",
+	  "chatFaces/ee_32.png",
+	  "chatFaces/ee_33.png",
+	  "chatFaces/ee_34.png",
+	  "chatFaces/ee_35.png",
+	  "chatFaces/ee_4.png",
+	  "chatFaces/ee_5.png",
+	  "chatFaces/ee_6.png",
+	  "chatFaces/ee_7.png",
+	  "chatFaces/ee_8.png",
+	  "chatFaces/ee_9.png",
+	  "chatjs/strophe-1.2.8.js",
+	  "chatjs/strophe-1.2.8.min.js",
+	  "chatjs/webim.config.js",
+	  "chatjs/websdk-1.4.10.js",
+	  "chatjs/websdk-1.4.10.min.js",
+	  "chatjs/websdk.shim.js",
+	  "js/demo-1.4.10.js",
+	  "lib/pinchzoom.min.js",
+	  "lib/zepto.min.js",
+	  "sdk/README.md",
+	  "sdk/demo.html",
+	  "sdk/dist/strophe-1.2.8.js",
+	  "sdk/dist/strophe-1.2.8.min.js",
+	  "sdk/dist/websdk-1.4.10.js",
+	  "sdk/dist/websdk-1.4.10.min.js",
+	  "sdk/dist/websdk-1.4.10.min.js.map",
+	  "sdk/dist/websdk.shim.js",
+	  "sdk/easemob.im.config.js",
+	  "sdk/gulpfile.js",
+	  "sdk/index.js",
+	  "sdk/package.json",
+	  "sdk/src/connection.js",
+	  "sdk/src/message.js",
+	  "sdk/src/queue.js",
+	  "sdk/src/status.js",
+	  "sdk/src/utils.js",
+	  "sdk/webim.config.js",
+	  "web-im/CHANGELOG.md",
+	  "web-im/README.md",
+	  "web-im/demo/images/default.png",
+	  "web-im/demo/images/faces/ee_1.png",
+	  "web-im/demo/images/faces/ee_10.png",
+	  "web-im/demo/images/faces/ee_11.png",
+	  "web-im/demo/images/faces/ee_12.png",
+	  "web-im/demo/images/faces/ee_13.png",
+	  "web-im/demo/images/faces/ee_14.png",
+	  "web-im/demo/images/faces/ee_15.png",
+	  "web-im/demo/images/faces/ee_16.png",
+	  "web-im/demo/images/faces/ee_17.png",
+	  "web-im/demo/images/faces/ee_18.png",
+	  "web-im/demo/images/faces/ee_19.png",
+	  "web-im/demo/images/faces/ee_2.png",
+	  "web-im/demo/images/faces/ee_20.png",
+	  "web-im/demo/images/faces/ee_21.png",
+	  "web-im/demo/images/faces/ee_22.png",
+	  "web-im/demo/images/faces/ee_23.png",
+	  "web-im/demo/images/faces/ee_24.png",
+	  "web-im/demo/images/faces/ee_25.png",
+	  "web-im/demo/images/faces/ee_26.png",
+	  "web-im/demo/images/faces/ee_27.png",
+	  "web-im/demo/images/faces/ee_28.png",
+	  "web-im/demo/images/faces/ee_29.png",
+	  "web-im/demo/images/faces/ee_3.png",
+	  "web-im/demo/images/faces/ee_30.png",
+	  "web-im/demo/images/faces/ee_31.png",
+	  "web-im/demo/images/faces/ee_32.png",
+	  "web-im/demo/images/faces/ee_33.png",
+	  "web-im/demo/images/faces/ee_34.png",
+	  "web-im/demo/images/faces/ee_35.png",
+	  "web-im/demo/images/faces/ee_4.png",
+	  "web-im/demo/images/faces/ee_5.png",
+	  "web-im/demo/images/faces/ee_6.png",
+	  "web-im/demo/images/faces/ee_7.png",
+	  "web-im/demo/images/faces/ee_8.png",
+	  "web-im/demo/images/faces/ee_9.png",
+	  "web-im/demo/images/group_user.png",
+	  "web-im/demo/images/loading.gif",
+	  "web-im/demo/images/logo-windowSDK.png",
+	  "web-im/demo/images/logo.png",
+	  "web-im/demo/javascript/dist/browser-polyfill.min.js",
+	  "web-im/demo/javascript/dist/demo-1.4.10.js",
+	  "web-im/demo/javascript/dist/swfupload/swfupload.min.js",
+	  "web-im/demo/javascript/dist/swfupload/swfupload.swf",
+	  "web-im/demo/javascript/dist/webim.config.js",
+	  "web-im/demo/javascript/src/api.js",
+	  "web-im/demo/javascript/src/components/blacklist/showBlacklist.js",
+	  "web-im/demo/javascript/src/components/blacklist/showGroupBlacklist.js",
+	  "web-im/demo/javascript/src/components/chat/chat.js",
+	  "web-im/demo/javascript/src/components/chat/chatWindow.js",
+	  "web-im/demo/javascript/src/components/chat/confirmPop.js",
+	  "web-im/demo/javascript/src/components/chat/emoji.js",
+	  "web-im/demo/javascript/src/components/chat/operationsFriends.js",
+	  "web-im/demo/javascript/src/components/chat/operationsGroups.js",
+	  "web-im/demo/javascript/src/components/chat/sendWrapper.js",
+	  "web-im/demo/javascript/src/components/chat/subscribe.js",
+	  "web-im/demo/javascript/src/components/chat/uploadShim.js",
+	  "web-im/demo/javascript/src/components/common/avatar.js",
+	  "web-im/demo/javascript/src/components/common/drag.js",
+	  "web-im/demo/javascript/src/components/common/loading.js",
+	  "web-im/demo/javascript/src/components/common/multiSelectBoxList.js",
+	  "web-im/demo/javascript/src/components/common/notify.js",
+	  "web-im/demo/javascript/src/components/common/rtcChannel.js",
+	  "web-im/demo/javascript/src/components/common/webim-demo.js",
+	  "web-im/demo/javascript/src/components/contact/contact.js",
+	  "web-im/demo/javascript/src/components/contact/contactItem.js",
+	  "web-im/demo/javascript/src/components/group/adminGroupMembers.js",
+	  "web-im/demo/javascript/src/components/group/changeGroupInfo.js",
+	  "web-im/demo/javascript/src/components/group/confirmGroupInfo.js",
+	  "web-im/demo/javascript/src/components/group/createGroup.js",
+	  "web-im/demo/javascript/src/components/group/joinPublicGroup.js",
+	  "web-im/demo/javascript/src/components/language.js",
+	  "web-im/demo/javascript/src/components/leftbar/addFriend.js",
+	  "web-im/demo/javascript/src/components/leftbar/cate.js",
+	  "web-im/demo/javascript/src/components/leftbar/leftbar.js",
+	  "web-im/demo/javascript/src/components/leftbar/operations.js",
+	  "web-im/demo/javascript/src/components/message/audio.js",
+	  "web-im/demo/javascript/src/components/message/file.js",
+	  "web-im/demo/javascript/src/components/message/img.js",
+	  "web-im/demo/javascript/src/components/message/loc.js",
+	  "web-im/demo/javascript/src/components/message/txt.js",
+	  "web-im/demo/javascript/src/components/message/video.js",
+	  "web-im/demo/javascript/src/components/sign/signin.js",
+	  "web-im/demo/javascript/src/components/sign/signup.js",
+	  "web-im/demo/javascript/src/components/webim.js",
+	  "web-im/demo/javascript/src/entry.js",
+	  "web-im/demo/javascript/src/swfupload/swfupload.cookie.js",
+	  "web-im/demo/javascript/src/swfupload/swfupload.js",
+	  "web-im/demo/javascript/src/swfupload/swfupload.swf",
+	  "web-im/demo/javascript/src/test.js",
+	  "web-im/demo/stylesheet/demo.scss",
+	  "web-im/demo/stylesheet/src/_chat.scss",
+	  "web-im/demo/stylesheet/src/_common.scss",
+	  "web-im/demo/stylesheet/src/_dialog.scss",
+	  "web-im/demo/stylesheet/src/_global.scss",
+	  "web-im/demo/stylesheet/src/_layer.scss",
+	  "web-im/demo/stylesheet/src/_leftbar.scss",
+	  "web-im/demo/stylesheet/src/_loading.scss",
+	  "web-im/demo/stylesheet/src/_msg.scss",
+	  "web-im/demo/stylesheet/src/_notify.scss",
+	  "web-im/demo/stylesheet/src/_sign.scss",
+	  "web-im/demo/stylesheet/src/_ui.scss",
+	  "web-im/demo/stylesheet/src/font/demo.css",
+	  "web-im/demo/stylesheet/src/font/demo.html",
+	  "web-im/demo/stylesheet/src/font/demo_fontclass.html",
+	  "web-im/demo/stylesheet/src/font/demo_symbol.html",
+	  "web-im/demo/stylesheet/src/font/demo_unicode.html",
+	  "web-im/demo/stylesheet/src/font/iconfont.css",
+	  "web-im/demo/stylesheet/src/font/iconfont.eot",
+	  "web-im/demo/stylesheet/src/font/iconfont.js",
+	  "web-im/demo/stylesheet/src/font/iconfont.svg",
+	  "web-im/demo/stylesheet/src/font/iconfont.ttf",
+	  "web-im/demo/stylesheet/src/font/iconfont.woff",
+	  "web-im/demo/stylesheet/src/multiple-select-box.scss",
+	  "web-im/demo/stylesheet/src/plugin.scss",
+	  "web-im/favicon.ico",
+	  "web-im/index.html",
+	  "web-im/package.json",
+	  "web-im/sdk/README.md",
+	  "web-im/sdk/demo.html",
+	  "web-im/sdk/dist/strophe-1.2.8.js",
+	  "web-im/sdk/dist/strophe-1.2.8.min.js",
+	  "web-im/sdk/dist/websdk-1.4.10.js",
+	  "web-im/sdk/dist/websdk-1.4.10.min.js",
+	  "web-im/sdk/dist/websdk-1.4.10.min.js.map",
+	  "web-im/sdk/dist/websdk.shim.js",
+	  "web-im/sdk/gulpfile.js",
+	  "web-im/sdk/index.js",
+	  "web-im/sdk/package.json",
+	  "web-im/sdk/src/connection.js",
+	  "web-im/sdk/src/message.js",
+	  "web-im/sdk/src/queue.js",
+	  "web-im/sdk/src/status.js",
+	  "web-im/sdk/src/utils.js",
+	  "web-im/webpack.config.js",
+	  "web-im/webrtc/dist/adapter.js",
+	  "web-im/webrtc/dist/webrtc-1.4.10.js",
+	  "web-im/webrtc/src/components/api.js",
+	  "web-im/webrtc/src/components/call.js",
+	  "web-im/webrtc/src/components/iq.js",
+	  "web-im/webrtc/src/components/p2p.js",
+	  "web-im/webrtc/src/components/utils.js",
+	  "web-im/webrtc/src/components/webrtc.js",
+	  "web-im/webrtc/src/entry.js",
+	  "Connection-Error.html",
+	  "Myevents-2.html",
+	  "agenda-1-0-2.html",
+	  "agenda-1-0-3.html",
+	  "demo.html",
+	  "groupChat-n.html",
+	  "logo.png",
+	  "images/1080x1882.png",
+	  "images/1242x2208.png",
+	  "images/480X762.png",
+	  "images/640X1136.png",
+	  "images/720X1242.png",
+	  "images/750X1334.png",
+	  "images/b.psd",
+	  "images/clock.png",
+	  "images/logo256X256.png",
+	  "images/myevents-img.jpg",
+	  "images/nofounding.png",
+	  "images/refresh.png",
+	  "images/we-code.png",
+	  "images/_notes/ext_gif.png.mno",
+	  "images/_notes/ext_jpg.png.mno",
+	  "images/_notes/ext_pdf.png.mno",
+	  "images/_notes/ext_ppt.png.mno",
+	  "images/_notes/ext_pptx.png.mno",
+	  "images/default_0.png",
+	  "images/default_1.png",
+	  "images/default_2.png",
+	  "images/ext_av.png",
+	  "images/ext_gif.png",
+	  "images/ext_pdf.fw.png",
+	  "images/ext_ppt.png",
+	  "images/face.png",
+	  "images/face_full.png",
+	  "js/im-chat2.js",
+	  "js/im-chat2017-0731.js",
+	  "LICENSE",
+	  "a.html",
+	  "chat1234132.html",
+	  "im-chat-20170731.html"
+	]
 }

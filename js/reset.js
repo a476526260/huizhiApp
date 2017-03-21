@@ -1,12 +1,15 @@
 mui.init();
 mui.plusReady(function() {
-	var code = document.getElementById("code"); //验证码
+	var Vcode = document.getElementById("Vcode");
 	var password = document.getElementById("password1"); //密码
 	var conpassword = document.getElementById("password2"); //确认密码
 	var sign = document.getElementById("sign");     //登录按钮
-	var curWindow=plus.webview.currentWebview();   //获取本窗口对象
+	var curWindow=plus.webview.currentWebview(); //获取本窗口对象
+	var launch=plus.webview.getLaunchWebview(); //获取启动页
+
 	sign.addEventListener("tap", function() {
-		if(code.value==""){     //验证码为空或不正确
+		 //验证码
+		if(Vcode.value==""){     //验证码为空或不正确
 			$(".error-tip").eq(0).show();
 			return false;
 		};
@@ -24,25 +27,40 @@ mui.plusReady(function() {
 			$(".error-tip").eq(2).show();
 			return false;
 		};
-		mui.ajax("", {
-			data: {
 
+
+		mui.ajax(domain + "/index.php/Api/api/resetPassword", {
+			data: {
+				code:Vcode.value,
+				email:curWindow.email,
+				password:password.value,
+				password1:conpassword.value
 			},
 			dataType: 'json', //服务器返回json格式数据
 			type: 'post', //HTTP请求类型
 			timeout: 10000, //超时时间设置为10秒；
 			success: function(data) {
-				mui.openWindow({
-					url: "reset.html",
-					id: "reset",
-					extras: {
-						code: "",
-					},
-					show: {
-						autoShow: true,
-						aniShow: "fade-in",
-					}
-				})
+				if(data.status==0){
+					//mui.fire(launch,"showindex",{});
+					plus.webview.close(curWindow);
+					mui.toast("Modify success!");
+					
+					mui.openWindow({
+						url: "signIn.html",
+						id: "signIn",
+						extras: {
+							email: curWindow.email,
+						},
+						show: {
+							autoShow: true,
+							aniShow: "fade-in",
+						}
+					});
+				}else{
+					mui.toast(data.msg);
+				}
+
+
 				$(".pop,.pop-content").fadeIn(300);
 			},
 			error: function(xhr, type, errorThrown) {

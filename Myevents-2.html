@@ -6,17 +6,19 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/myevents.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/myevents.css" />
 		<style type="text/css">
-			.mui-content{ padding-bottom: 1rem;}
+			.mui-content {
+				padding-bottom: 1rem;
+			}
 		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
@@ -24,30 +26,51 @@
 			<div class="events-box">
 				<dl>
 					<dt><img src="images/happening.png"/>Happening</dt>
-					<dd>2016 GIAC Global Internet Conference</dd>
-					<dd>Global Internet Conference</dd>
-					<dd>2016 GIAC Global Internet Conference</dd>
-					<dd>Global Internet Conference</dd>
 				</dl>
 				<dl>
 					<dt><img src="images/upcoming.png"/>Upcoming</dt>
-					<dd>2016 GIAC Global Internet Conference</dd>
-					<dd>Global Internet Conference</dd>
-					<dd>2016 GIAC Global Internet Conference</dd>
-					<dd>Global Internet Conference</dd>
 				</dl>
 				<dl>
 					<dt><img src="images/past.png"/>Past</dt>
-					<dd>2016 GIAC Global Internet Conference</dd>
-					<dd>Global Internet Conference</dd>
-					<dd>2016 GIAC Global Internet Conference</dd>
-					<dd>Global Internet Conference</dd>
 				</dl>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			$(".events-box dl").each(function(index, ele) {
+				var pagenum=index==1?1:4;
+				mui.ajax(domain + "index.php/Api/api/exhibition", {
+					data: {
+						key: key,
+						ver: ver,
+						token:localStorage.getItem("TOKEN_LOGIN"),
+						uid:localStorage.getItem("TOKEN_UID"),
+						id: index,
+						page: 1,
+						pagenum: pagenum,
+					},
+					dataType: 'json',
+					type: 'POST',
+					timeout: 1000,
+					success: function(result) {
+						var html = "";
+						if(result.data) {
+							for(var k = 0; k < result.data.length; k++) {
+								html += '<dd>'+result.data[k].title+'</dd>';
+							};
+						};
+						setTimeout(function() {
+							$(ele).append(html);
+						}, 1000);
+					},
+					error: function(xhr, type, errorThrown) {
+						console.log(type);
+					}
+				});
+			})
 		</script>
 	</body>
 

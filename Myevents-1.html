@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/myevents.css" />
+	</head>
+
+	<body>
+		<!--
+        	作者：1307607195@qq.com
+        	时间：2017-06-08
+        	描述：me -> my events
+        -->
+		<header class="mui-bar mui-bar-nav">
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell mui-collapse li_contact mui-active">
+			        <a class="accordtion-title"><span class="icon happening-icon"><img src="images/happening.png"/></span> Happening</a>
+			        <div class="mui-collapse-content" id="happening_s"></div>
+			    </li>
+			    
+			    <li class="mui-table-view-cell mui-collapse li_contact">
+			        <a class="accordtion-title"><span class="icon upcoming-icon"><img src="images/upcoming.png"/></span> upcoming</a>
+			        <div class="mui-collapse-content" id="upcoming_s"></div>
+			    </li>
+			    
+			    <li class="mui-table-view-cell mui-collapse li_contact">
+			        <a class="accordtion-title"><span class="icon past-icon"><img src="images/past.png"/></span> past</a>
+			        <div class="mui-collapse-content" id="past_s"></div>
+			    </li>
+
+			</ul>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				var curWindow = plus.webview.currentWebview();
+				document.getElementById("bname").innerText = curWindow.bname
+				mui("body").on("tap", ".pick-up", function() {
+					$(this).parent().slideUp();
+				});
+				//拉默认数据
+				var index_group;
+				mui.ajax(domain + "index.php/Api/api/myEvent", {
+					data: {
+						key: key,
+						ver: ver,
+						token:localStorage.getItem("TOKEN_LOGIN"),
+						uid:localStorage.getItem("TOKEN_UID"),
+						page: 1,
+						pagenum: 10,
+					},
+					dataType: 'json',
+					type: 'POST',
+					timeout: 1000,
+					success: function(result) {
+						var html = "";
+						if(result.data) { 
+							//console.log(JSON.stringify(result.data))
+							for(var arr in result.data) {
+								index_group='';
+								for(var arr2 in result.data[arr]) {
+									index_group+= '<a href="javascript:;" class="flex" data-id="' + result.data[arr][arr2].aid + '" data-pic="'+domain+result.data[arr][arr2]['path']+'">' +
+										'<img class="mui-media-object mui-pull-left" src="' + result.base.domain + result.data[arr][arr2].path + '">' +
+										'<div class="mui-media-body">' +
+										'<p class="title">' + result.data[arr][arr2].title + '</p>' +
+										'<p class="date">' + result.data[arr][arr2].sdate + '</p>' +
+										'</div>' +
+										'</a>';
+								}
+								//console.log(index_group)
+								document.getElementById(arr+"_s").innerHTML = index_group
+								
+							}
+						};
+						setTimeout(function() {
+							//$(ele).find("ul").append(html);
+							mui.toast(html)
+						}, 1000);
+					}, 
+					error: function(xhr, type, errorThrown) {
+						console.log(errorThrown);
+					}
+				});
+				var targetPage = mui.preload({
+					url: "happening.html",
+					id: "happending",
+					styles: {
+						top: "0px",
+						bottom: "50px",
+					}
+				});
+				document.addEventListener("reloadData",function(){
+					plus.webview.currentWebview().reload()
+				})
+				mui(".mui-table-view").each(function(index, item) {
+					mui("body").on("tap",".flex",function(){
+						
+						mui.openWindow({
+							id:'happening',
+							url:'happening.html',
+							show: {
+								aniShow: "fade-in",
+							},waiting: {
+								autoShow: true,
+								title: "loading..."
+							},
+							extras:{
+								bname:"My Event",
+								aid:this.getAttribute("data-id"),
+								pic:this.getAttribute("data-pic")
+							}
+						});
+						
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

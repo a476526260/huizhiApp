@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cv.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">Me</a>
+			<h1 class="mui-title" id="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<div class="basic-infors">
+				<div class="infor-box">
+					<div class="infors-photo"><img src="images/about_logo.png" id="face"/></div>
+					<div class="infors-name" id="uname"></div>
+					<div class="infors-other">
+						<span id="job"></span>
+						<span id="sex"></span>
+					</div>
+				</div>
+			</div>
+			<div class="more-infors">
+				<div class="infor-part infor-experience">
+					<div class="infor-part-title">
+						<span><img src="images/bio.png" class="contact"/></span>
+						Biography
+						<span class="mui-icon mui-icon-compose mui-pull-right" style="float: right; border: none;" id="edit_contact"></span>
+					</div>
+					<div class="mui-input-group ani_5" id="edit_con_form" style="display: none;">
+						<div class="mui-input-row" style="margin: 0px 5px 10px; height: auto;">
+							<textarea id="contact_textarea" style="height: auto;" placeholder="Your contact"></textarea>
+						</div>
+						<div class="mui-button-row">
+						        <button type="button" class="mui-btn mui-btn-primary" id="sub_con">Submit</button>
+						        <button type="button" class="mui-btn mui-btn-danger" id="sub_con_esc" >Cancel</button>
+						</div>
+					</div>
+					<div class="mui-table-view" id="contact"></div>
+				</div>
+				<div class="infor-part infor-experience">
+					<div class="infor-part-title">
+						<span><img src="images/icon-e.png" class="experience"/></span>
+						Experience
+						<span class="mui-icon mui-icon-compose mui-pull-right" style="float: right; border: none;" id="edit_bio"></span>
+					</div>
+					<div class="mui-input-group ani_5" id="add_bio_form" style="display: none;">
+					    <div class="mui-input-row">
+					        <label>Company</label>
+					    	<input type="text" name="company" id="add_company" class="mui-input-clear" placeholder="Company full name">
+					    </div>
+					    <div class="mui-input-row">
+					        <label>Department</label>
+					        <input type="text" name="department" id="add_department" class="mui-input-clear" placeholder="Department">
+					    </div>
+					    <div class="mui-input-row">
+					        <label>Position</label>
+					        <input type="text" name="position" id="add_position" class="mui-input-clear" placeholder="position">
+					    </div>
+					    <div class="mui-input-row">
+					        <label>Entry time</label>
+					        <input type="text" name="sdate" id="add_sdate" data-options='{"type":"date","beginYear":1990,"endYear":2030}' class="mui-input-clear btn_date" placeholder="Entry time">
+					    </div>
+					    <div class="mui-input-row">
+					        <label>Dimission</label>
+					        <input type="text" name="edate" id="add_edate" data-options='{"type":"date","beginYear":1990,"endYear":2030}' class="mui-input-clear btn_date" placeholder="Dimission">
+					    </div>
+					    <div class="mui-input-row" style="margin: 10px 5px;height: auto;">
+					    	<label>Contact</label>
+							<textarea name="biocon" id="biocon" rows="3" placeholder="Contact"></textarea>
+						</div>
+					    <div class="mui-button-row">
+					        <button type="button" class="mui-btn mui-btn-primary" id="sub_bio">Submit</button>
+					        <button type="button" class="mui-btn mui-btn-danger" id="sub_bio_esc" >Cancel</button>
+					    </div>
+					</div>
+					<ul class="mui-table-view" id="exp">
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js"></script>
+		<script src="js/public.js"></script>
+		<script src="js/biography.js"></script>
+		<script>
+			(function($) {
+				$.init();
+
+				//var result = $('#result')[0];
+				var btns = $('.btn_date');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+
+							document.getElementById(id).value = rs.text
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

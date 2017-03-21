@@ -12,118 +12,34 @@
 	</head>
 
 	<body>
+		<!--
+        	作者：1307607195@qq.com
+        	时间：2017-06-08
+        	描述：message模板
+        -->
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left" style="display: none ;"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
 			<form class="mui-input-row mui-input-group search">
 				<div class="search-box mui-icon mui-icon-search">
-					<input type="search">
+					<input type="search" id="search_ipt" class="mui-input-clear">
 				</div>
 			</form>
 			<div class="sort-way">
 				<span class="mui-icon iconfont icon-th-large-copy"></span>
 				<span class="mui-icon iconfont icon-fenlei"></span>
 			</div>
-			<ul class="mui-table-view block-style">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME1</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-							<span class="chat"></span>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME2</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-						<div class="mui-media-body">
-							<p class="name">NAME</p>
-							<p class="job">ceo</p>
-							<p class="company">Long company name </p>
-						</div>
-					</a>
-				</li>
+			<ul class="mui-table-view list-style" id="lists">
+				
 			</ul>
 		</div>
 
 		<script src="js/mui.min.js"></script>
-		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			mui.init();
-			$("body").on("tap",".icon-th-large-copy",function(){
-				$(".mui-table-view").addClass("block-style").removeClass("list-style");
-			});
-
-			$("body").on("tap",".icon-fenlei",function(){
-				$(".mui-table-view").addClass("list-style").removeClass("block-style");
-			});
-		</script>
+		<script src="js/public.js" ></script>
+		<script src="lib/jquery-1.7.2.min.js"></script>
+		<script src="js/message.js"></script>
 	</body>
-
-</html>
+</html> 

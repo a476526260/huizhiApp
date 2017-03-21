@@ -24,7 +24,12 @@
 	padding: 0;
 	padding-left: 0.7rem;
 	border-radius: 3px;
+	-webkit-border-radius: 3px;
 	text-align: left;
+}
+.search-box span{
+	top: 0.28rem !important;
+	right: 0.5rem !important;
 }
 .mui-control-content {
 	background-color: #E5E6E6;
@@ -38,17 +43,19 @@
 #sliderSegmentedControl a.active:after{ content: ""; display: block; width: 60%; height: 1px; background: #fff; position: absolute; bottom: 5px; left: 20%;}
 #sliderProgressBar{ width: 10%;}
 .sort-way{ width: 100%; height: 38px; position: relative; background: #58bf92;}
-.sort-way .mui-icon{ color: #fff; font-size: 18px; position: absolute; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%)}
-.sort-way .mui-icon.icon-th-large-copy{ right: 30px;}
+.sort-way .mui-icon{ color: #fff; font-size: 18px; position: absolute; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); padding: 0 10px;}
+.sort-way .mui-icon.icon-th-large-copy{ right: 5px; display: none;}
 .sort-way .mui-icon.icon-fenlei{ right: 5px;}
-.mui-table-view{ width: 94%; margin: 0 auto; background: none; overflow: hidden;}
+.mui-table-view{ width: 94%; margin: 10px auto 0; background: none; overflow: hidden;}
 .list-style .mui-table-view-cell{ padding: 0; margin-bottom: 0.18rem; background: #fff;}
-.mui-table-view-cell>a:not(.mui-btn){ margin: 0;}
+.mui-table-view-cell>a:not(.mui-btn){ margin: 0; display: block; overflow: hidden;}
 .mui-table-view-cell:after{ display: none;}
-.list-style .mui-media-body p{ line-height: 0.34rem;}
+.list-style .mui-media-body p{ line-height: 0.34rem; width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .list-style .mui-media-body .name{ color: #58bf92; font-size: 0.3rem;}
-.list-style .mui-media-body .job,.list-style .mui-media-body .company{ color: #010101;}
-.list-style .mui-media img{ width: 1.22rem; height: 1.22rem; max-width: 1.22rem;}
+.list-style .mui-media-body .job{ color: #010101;}
+.list-style .mui-media-body .company{ color: #010101;padding-right: 60px;}
+.list-style .mui-media-body .time{font-size: 12px;width: 60px;position: absolute;right: 0.92rem;bottom: 0.15rem;}
+.list-style .mui-media img{ width: 1rem;height: 1rem;max-width: 1.22rem;margin: 0.11rem;border-radius: 0.61rem;}
 .mui-table-view.list-style .mui-media-body{ padding:0.1rem 0;}
 .list-style .mui-scroll{ background: #e5e6e6;}
 .list-style .chat{ display: block; width: 0.92rem; height: 100%; position: absolute; right: 0; top: 0; background: #58bf92;}
@@ -56,10 +63,10 @@
 
 
 
-.block-style .mui-table-view-cell{ float: left; width: 22%; padding: 0; margin-right: 4%; margin-bottom: 0.2rem;}
+.block-style .mui-table-view-cell{ float: left; width: 22%; padding: 0; margin-right: 4%; margin-bottom: 0.2rem; min-height: 2.5rem;}
 .block-style .mui-table-view-cell:nth-child(4n){ margin-right: 0 !important;}
 
-.block-style .mui-media img{ width: 100%; height: auto; max-width: 100%; display: block; margin: 0; float: none;}
+.block-style .mui-media img{ width: 100%; height: auto; max-width: 100%; display: block; margin: 0; float: none; min-height: 1.3rem;}
 .mui-table-view.block-style .mui-media-body{ display: block;}
 .block-style .mui-media-body p{ line-height: 0.34rem;}
 .block-style .mui-media-body .name{ color: #58bf92; font-size: 0.3rem; text-align: center; margin-top: 0.1rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
@@ -67,7 +74,7 @@
 .block-style .chat{ display: none;}
 .block-style .heart{ display: block; width: 0.34rem; height: 0.3rem; background: url(../images/networking-heart.png) center no-repeat; background-size:100% 100% ; position: absolute; right: 0; bottom: 1.12rem;}
 
-
+.block-style .time{ display:none;font-size: 12px;width: 100%; text-align: center; position:relative;right: 0;bottom: 0.15rem;}
 
 
 

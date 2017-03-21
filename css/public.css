@@ -42,6 +42,7 @@ body {
 
 .mui-bar {
 	background-color: #c1c1c1;
+	z-index: 9999999999;
 }
 
 .mui-bar-nav .mui-action-back {
@@ -49,7 +50,9 @@ body {
 	font-size: 20px;
 	margin: 2px 0;
 }
-
+.mui-title{
+	color: #fff;
+}
 .app-logo {
 	width: 80px;
 	position: absolute;
@@ -58,7 +61,9 @@ body {
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-
+.mui-bar-nav.mui-bar .mui-icon{
+	/*font-size: 16px;*/
+}
 .app-logo img {
 	width: 100%;
 	max-height: 44px;
@@ -91,10 +96,10 @@ body {
 }
 
 .mui-icon .mui-badge-div {
-	width: 16px;
+	width: auto;
 	height: 16px;
 	background: #58bf92;
-	top: -6px;
+	top: 0px;
 	color: #1A1210;
 	line-height: 16px;
 }
@@ -104,12 +109,22 @@ body {
 }
 .mui-iframe-wrapper{ z-index: -1 !important;}
 .mui-bar-tab .mui-tab-item .icon-area{ overflow: hidden; text-overflow: ellipsis; padding: 6px 0;}
-.mui-bar{ z-index: 9999999999; visibility: visible;}
+.mui-bar{ visibility: visible;}
 .child-nav{ position: absolute; top: -99px; margin: 0; padding: 0; list-style: none; width: 100%; z-index: 99999;}
 .child-nav li{background: rgba(82,217,158,.9); line-height: 2rem; border-bottom: 1px solid #fff; text-align: left; padding-left: 1rem; overflow: hidden; text-overflow: ellipsis; font-size: 12px; position: relative;}
 .child-nav li:before{ content: ""; display: block; position: absolute; left: 2px; top: 50%;}
 .child-nav li:nth-child(1):before{ width: 0.73rem; height: 0.79rem; background: #007AFF; background: url(../images/happening.png) center no-repeat; background-size: 100% 100%; margin-top: -0.4rem;}
 .child-nav li:nth-child(2):before{ width: 0.73rem; height: 0.80rem; background: #007AFF; background: url(../images/upcoming.png) center no-repeat; background-size: 100% 100%; margin-top: -0.4rem;}
 .child-nav li:nth-child(3):before{ width: 0.61rem; height: 0.81rem; background: #007AFF; background: url(../images/past.png) center no-repeat; background-size: 100% 100%; margin-top: -0.4rem;}
-.new-circle{ width: 6px; height: 6px; background: red; border-radius: 50%; position: absolute; top: 0; right: 0;}
+.new-circle{ width: 6px; height: 6px; background: red; border-radius: 50%;-webkit-border-radius: 50%; position: absolute; top: 0; right: 0;}
+.ani_5{transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out;}
+@media only screen and (min-width: 320px) and (max-width: 380px) {
+	.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
+		display: block;
+	}
 
+}
+
+#mui-title{
+
+}

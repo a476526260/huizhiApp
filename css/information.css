@@ -1,10 +1,11 @@
 html,body,.mui-content{ background-color: #e5e6e6;}
-.information-wrap{ width: 94%; margin: 0 auto;}
+.information-wrap{ width: 100%; margin: 0 auto;}
 .infofmation-banner img{ width: 100%; margin-top: 4%; vertical-align: middle;}
-.information-text{ padding-top: 0.5rem; background: #ffffff;}
-.information-text h2{ font-size: 0.3rem; line-height: 0.36rem; color: #515151; text-align: center; margin: 0;}
-.information-text p{ text-align: center; font-size: 0.26rem; line-height: 0.3rem; margin: 0;}
-.information-text .tip{ text-align: center; font-size: 0.2rem; color: #58bf92; margin-top: 0.18rem;}
+.information-text{ padding-top: 0.5rem; background: #ffffff; line-height: 30px;}
+#in_con{ padding-bottom: 10px; }
+.information-text h2{ font-size: 0.3rem; line-height: 0.36rem; color: #515151; text-align: center; margin: 0 auto; width: 94%; word-wrap: break-word;}
+.information-text p{ text-align: justify; width: 94%; font-size: 0.26rem; margin: 0.18rem auto 0; line-height: 21px; }
+.information-text .tip{ display: block; text-align: justify; width: 94%; margin: 0.18rem auto 0; font-size: 0.2rem; color: #58bf92;}
 .logo-sponsor{ overflow: hidden; background: #58bf92; position: relative;}
 .sopnsor-icon{ float: left; width: 20%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);-webkit-transform: translateY(-50%);}
 .sopnsor-icon img{ width: 60%;}
@@ -12,9 +13,10 @@ html,body,.mui-content{ background-color: #e5e6e6;}
 .company-slider{ float: left; width: 80%; margin-left: 20%;}
 .company-slider .mui-table-view{ background: none;}
 .logo-sponsor .company-slider span{ color: #fff; font-size: 0.2rem; line-height: 0.24rem; display: block;}
-.company-logo{ position: relative;}
-.company-logo .level{ position: absolute; width: 0.54rem !important; height: 0.54rem !important; top: 0; right: 0;}
-.company-logo .logo{ width: 80% !important;}
+.company-logo{ position: relative; width: 80%; margin: 0 auto; min-height: 1.2rem; border-radius:50%; -webkit-border-radius: 50%;  background: #FFFFFF; line-height: 100%;}
+/*.company-logo p{display: block; width: 100%; height: 100%; border-radius:50%;  overflow: hidden; background: #FFFFFF;}*/
+.company-logo img.logo{ width: 100%; height: 100%;  border-radius: 100%;}
+.company-logo .level{ position: absolute; width: 0.54rem !important; height: 0.54rem !important; top: -5%; right: -5%;}
 .logo-partner{ overflow: hidden; background: none; position: relative;}
 .partner-icon{ float: left; width: 20%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);-webkit-transform: translateY(-50%);}
 .partner-icon img{ width: 60%;}

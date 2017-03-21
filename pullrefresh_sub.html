@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.imageviewer.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/dropload.css"/>
+		<link href="css/im-chat.css" rel="stylesheet" />
+		
+		
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div class="" id="downBtn" style="display: none;"></div>
+		<div id="mui-title"></div>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="padding-bottom: 50px;">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<div class="mui-table-view mui-table-view-chevron" id="msg-list">
+					
+				</div>
+			</div>
+		</div> 
+		<footer>
+			<div class="footer-left" style="display: none;">
+				<i id='msg-image' class="iconfont icon-xiangji" style="font-size: 28px; margin-top: 11px; display: none;"></i>
+			</div>
+			<div class="footer-center">
+				<input id='msg-text' placeholder="press enter send message" type="text" class='input-text'  maxlength="100" />
+				<button id='msg-sound' type="button" class='input-sound' style="display: none;">按住说话</button>
+			</div>
+			<label for="" class="footer-right" id="footer-right">
+				<i id='msg-type' class="iconfont icon-sendemail1" style="font-size: 28px; margin-top: 11px; display: inline-block;"></i>
+			</label>
+		</footer>
+		<script src="js/mui.min.js"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var uid = logined = localStorage.getItem("TOKEN_UID");
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						height:50,//可选,默认50.触发下拉刷新拖动距离,
+						auto: false,//可选,默认false.首次加载自动下拉刷新一次
+						contentrefresh: 'Loading...',
+						contentdown : "Drop down refresh",
+						contentover : "To refresh",
+						contentrefresh : "Loading...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+						color:'#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
+						callback: pulldownRefresh
+					}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+					mui.trigger(document.getElementById("downBtn"),'tap'); 
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+			}
+
+				mui.plusReady(function() {
+					var curWindow = plus.webview.currentWebview();
+					var aid = curWindow.aid||0;
+					var to= curWindow.to||0 
+					var maxMsgid=0,minMsgid = 0
+					var messageKeyword = ''
+					var uname = '',sender='zs'
+					var face_class = "";
+					if(aid  > 0 || to > 0){
+						getData(aid,to, 0, 0) 
+					}
+					var muiTitle = document.getElementById("downBtn")
+					muiTitle.addEventListener("tap",function(){
+						minMsgid = parseInt($("#msg-list .msg-item:first").attr("data-id"))||0
+						//console.log($("#msg-list").html())
+						getData(aid,to, 0, minMsgid) 
+					})
+					
+					mui("body").on("tap",".goBio",function(){
+						var _this=this;
+						
+						var dataUid=_this.getAttribute("data-uid")
+						var ind = muiTitle
+						mui.openWindow({
+							url:ind=='Speaker'?'Speakers.html':"networkingBio.html",
+							id:'Speaker'?'Speakers':"networkingBio",
+							show:{
+								aniShow:"fade-in",
+							},
+							styles:{
+								top:"0px",
+								bottom:"50px"
+							},
+							extras:{
+								aid:curWindow.aid,
+								bname2:'',
+								speakerId:dataUid,
+								bname:muiTitle
+							}
+						})
+					})
+					
+					
+					var msg_text_btn = document.getElementById("msg-text")
+					var sendBtn = document.getElementById("footer-right")
+					msg_text_btn.addEventListener("tap",function(event){
+						setTimeout(function(){
+							mui('#pullrefresh').pullRefresh().refresh();
+							mui('#pullrefresh').pullRefresh().scrollToBottom();
+						},1000)
+					})
+					msg_text_btn.addEventListener("keyup",function(event){
+						if (event.keyCode == 13) {
+							mui.trigger(sendBtn,'tap');
+							//mui.toast('发送')
+							//mui.trigger(ui.footerRight,"release")
+						}
+					})
+					sendBtn.addEventListener("tap",function(){
+						//mui.alert(msg_text_btn.value)
+						if(msg_text_btn.value.length < 1){
+							mui.toast('please input message!')
+							return false;
+						}else if(parseInt(aid)>0 || parseInt(to) > 0){
+							messageKeyword = msg_text_btn.value
+							msg_text_btn.value = '' 
+							//console.log(domain + "/index.php/Api/index/sendMsg/uid/"+uid+"/aid/"+aid+"/to/"+to+"/msg/"+messageKeyword)
+							//document.getElementById("sendMsgIfrmae").setAttribute("src",domain + "/index.php/Api/index/sendMsg/uid/"+uid+"/aid/"+aid+"/to/"+to+"/msg/"+messageKeyword)
+							//msg_text_btn.value = ''
+							//return false;
+							mui.ajax(domain + "/index.php/Api/Msg/send/",{
+								data:{
+									key: "",
+									ver: ver,
+									uid: uid,
+									aid: aid,
+									to : to,
+									msg: messageKeyword
+								},
+								dataType:'json',
+								type:'get',
+								timeout: 10000,
+								success: function(result){ 
+									//console.log("发送消息返回的结果:"+JSON.stringify(result))
+									//
+									/*"data":{
+								        "from":1164,
+								        "to":0,
+								        "msg":"fhkl",
+								        "addtime":1503826189,
+								        "status":0,
+								        "aid":30,
+								        "chatid":994,
+								        "uname":"fhkl",
+								        "face":"/Uploads/Face/599d38de45249.jpg",
+								        "toface":"",
+								        "job":" hhd h hdh dhfjc",
+								        "company":"高顿教育"
+								    }*/
+									var con_new = '<div class="msg-item msg-item-self" msg-type="text" data-id="'+result.data.chatid+'" id="chat_'+result.data.chatid+'">'
+													+'<img class="msg-user goBio" src="'+ domain + result.data.face+'" data-uid="'+uid+'" alt="" />'
+														+'<div class="msg-content" style="">'
+															+'<div class="msg-content-inner">' 
+															+'<div class="chat-infor" style="white-space: nowrap; overflow: inherit; position: relative;">'
+															+'		<span class="infor" style="margin-right: 120px;">'+result.data.chatid+"/"+aid+'Me</span>'
+															+'		<span class="time" style="height: 20px; position: absolute; top: 0; right: -5px;">'
+															+'			<b class="iconfont icon-101"></b>'+transformTime(result.data.addtime)+''
+															+'		</span>'
+															+'	</div>'
+															+'	<p class="chat-word">'
+															+'		'+result.data.msg+''
+															+'	</p>'
+															
+															+'</div>'
+														+'</div>'
+													+'<div class="mui-item-clear"></div>'
+													+'</div>'
+									$("#msg-list").append(con_new);
+									mui('#pullrefresh').pullRefresh().refresh();
+									mui('#pullrefresh').pullRefresh().scrollToBottom();
+								},
+								error: function(xhr, type, errorThrown) {
+									console.log("发送消息时错误:"+errorThrown+JSON.stringify(xhr));
+									msg_text_btn.value = ''
+								}
+							})
+						}else{
+							alert('未知错误!')
+						}
+					})
+					
+					
+					function getData(aid,to,maxMsgid,minMsgid) {
+						if(aid == 0 && to == 0)return false;
+						mui.ajax(domain + "/index.php/Api/Msg/getMsg/", {
+							data: {
+								key: "",
+								ver: ver,
+								aid: aid,
+								maxMsgid: maxMsgid,
+								minMsgid: minMsgid,
+								uid:uid,
+								to:to
+							},
+							dataType: 'json',
+							type: 'get',
+							timeout: 60000,
+							success: function(result) { 
+								if(maxMsgid == 0){ 
+									setTimeout(function(){
+										maxMsgid = parseInt($("#msg-list .msg-item:last").attr("data-id"))||0
+										getData(aid,to,maxMsgid,0)
+									},3000)
+								}else if (minMsgid == 0 ) {
+									setTimeout(function(){
+										maxMsgid = parseInt($("#msg-list .msg-item:last").attr("data-id"))||0
+										getData(aid,to, maxMsgid, 0)
+									},200)
+								}
+								var con_a='';
+								if(result.status == 0){
+									for( var i in result.data){
+										if($("#chat_"+result.data[i].chatid).length == 0){
+											var face = result.data[i].face
+											var job=company=''
+											if(parseInt(uid) == parseInt(result.data[i].from)){
+												uname = "Me"
+												sender = 'msg-item-self'
+												face_class = "msg-user"
+											}else{
+												uname = result.data[i].uname
+												sender = ''
+												face_class = "msg-other"
+												if(result.data[i].job.length > 0){
+													job = " ("+result.data[i].job+")"
+												} 
+												if(result.data[i].company.length > 0){
+													company = "<br>"+result.data[i].company
+												}
+											}
+											var con_new = '<div class="msg-item '+sender+'" msg-type="text" data-id="'+result.data[i].chatid+'" id="chat_'+result.data[i].chatid+'">'
+												+'<img class="'+face_class+' goBio" src="'+ domain + result.data[i].face+'" data-uid="'+result.data[i].from+'" alt="" />'
+													+'<div class="msg-content" style="">'
+														+'<div class="msg-content-inner">' 
+														+'<div class="chat-infor" style="white-space: nowrap; overflow: inherit; position: relative;">'
+														+'		<span class="infor" style="margin-right: 120px;">'+uname+job+company+'</span>'
+														+'		<span class="time" style="height: 20px; position: absolute; top: 0; right: -5px;">'
+														+'			<b class="iconfont icon-101"></b>'+transformTime(result.data[i].addtime)+''
+														+'		</span>'
+														+'	</div>'
+														+'	<p class="chat-word">'
+														+'		'+result.data[i].msg+''
+														+'	</p>'
+														
+														+'</div>'
+													+'</div>'
+												+'<div class="mui-item-clear"></div>'
+												+'</div>'
+												con_a += con_new;
+										}
+									};
+									if(minMsgid>0){
+										$("#msg-list").prepend(con_a);
+									}else{
+										$("#msg-list").append(con_a);
+										mui('#pullrefresh').pullRefresh().refresh();
+										mui('#pullrefresh').pullRefresh().scrollToBottom();
+									}
+									if(minMsgid == 0 ){
+										var ii= 0
+										var ii_int = setInterval(function(){
+											++ii;
+											if(ii > 10){
+												clearInterval(ii_int)
+											}
+											mui('#pullrefresh').pullRefresh().refresh();
+											mui('#pullrefresh').pullRefresh().scrollToBottom();
+										},100)
+									}
+								}
+								//console.log($(".mui-content").html())
+								if(minMsgid > 0 && result.status == 1){
+									mui.toast('no more than message')
+								}
+								mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+							},
+							error: function(xhr, type, errorThrown) {
+								console.log("请求错误时:再次请求")
+								if( minMsgid == 0 ){
+									setTimeout(function(){
+										maxMsgid = parseInt($("#msg-list .msg-item:last").attr("data-id"))||0
+										getData(aid,to, maxMsgid, 0)
+									},3000)
+								}else{
+									//console.log("当前时间:"+new Date())
+								}
+								mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+							}
+						}); 
+					};
+				
+					function transformTime(timeTemp) {
+						var time = new Date(timeTemp * 1000);
+						return((time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + (time.getMinutes().toString().length == 1 ? "0" + time.getMinutes() : time.getMinutes()));
+					};				
+					
+					
+					setTimeout(function() {
+						//mui('#pullrefresh').pullRefresh().pullupLoading();
+					}, 10);
+
+				});
+		</script>
+	</body>
+
+</html>

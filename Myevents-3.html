@@ -16,84 +16,186 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left" style="display: none;">Me</a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
 			<div class="green-bj"></div>
 			<div class="nav-list">
-				<div class="item" id="events"><span class="icon"><img src="images/icon-m.png"/></span>My Events</div>
-				<div class="item" id="contacts"><span class="icon"><img src="images/icon-m.png"/></span>My Contacts</div>
-				<div class="item" id="cv"><span class="icon"><img src="images/icon-c.png"/></span>CV</div>
-				<div class="item" id="updateprofile"><span class="icon"><img src="images/icon-u.png"/></span>Update Profile</div>
+				<div class="item" style="display: none;" id="events"><span class="icon"><img src="images/icon-m.png"/></span>My Events</div>
+				<div class="item" id="contacts"><span class="icon"><img src="images/icon-c.png"/></span>Contacts</div>
+				<div class="item" id="biography"><span class="icon"><img src="images/icon-b.png"/></span>Biography</div>
+				<div class="item" id="updateProfileLook"><span class="icon"><img src="images/icon-p.png"/></span>Profile</div>
+				<div class="item" id="pwd"><span class="icon"><img src="images/icon-c.png"/></span>Change Password</div>
 				<div class="item" id="feedback"><span class="icon"><img src="images/icon-f.png"/></span>Feedback</div>
-				<div class="item" id="exit"><span class="icon"><img src="images/icon-e.png"/></span>Exit</div>
+				<div class="item" id="aboutus"><span class="icon"><img src="images/icon-a.png"/></span>About</div>
+				<div class="item" id="exit"><span class="icon"><img src="images/icon-l.png"/></span>Logout</div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			var targetPage = mui.preload({
+				url: "me-myevent.html",
+				id: "me-myevent",
+				styles: {
+					top: "0px",
+					bottom: "50px",
+				}
+			});
 			var exit=document.getElementById("exit"),
 				events=document.getElementById("events"),
 				contacts=document.getElementById("contacts"),
-				cv=document.getElementById("cv"),
-				updateprofile=document.getElementById("updateprofile"),
-				feedback=document.getElementById("feedback");
+				biography=document.getElementById("biography"),
+				updateProfileLook=document.getElementById("updateProfileLook"),
+				feedback=document.getElementById("feedback"),
+				aboutus=document.getElementById("aboutus"),
+				pwd=document.getElementById("pwd");
 
 
 			mui.plusReady(function(){
 				var launch=plus.webview.getLaunchWebview();
+				 pwd.addEventListener("tap",function(){
+				 	mui.openWindow({
+						url:"changePassword.html",
+						id:"changePassword",
+						styles:{
+							top:"0px",
+							bottom:"50px"
+						},
+						show:{
+							aniShow:"fade-in",
+						},
+						extras:{
+							bname:"Me"
+						}
+					})
+				 })
 				//退出登录
 				exit.addEventListener("tap",function(){
-					localStorage.setItem("userId","");
-					mui.toast("已退出登录");
-					mui.fire(launch,"exit",{});
+					mui.confirm("You are logging out the APP!","",["Cancel","Logout"],function(e){
+						if (e.index == 1) {
+							//localStorage.setItem("userId","");
+							var ru = JSON.parse(localStorage.getItem("USER_INFO"))
+							localStorage.clear()
+							//console.log(localStorage.getItem("TOKEN_UID"))
+							localStorage.setItem("email",ru.email||'')
+							//localStorage.clear()
+							localStorage.removeItem("delFav")
+							localStorage.removeItem("message_having")
+							localStorage.removeItem("userFace")
+							localStorage.removeItem("photo")
+							localStorage.removeItem("TOKEN_LOGIN")
+							localStorage.removeItem("TOKEN_UID")
+							localStorage.removeItem("TIMESTAMP")
+							localStorage.removeItem("USER_INFO")
+							//mui.toast("is sigin out!");
+							
+							//plus.webview.close(list)
+							mui.fire(launch,"exit",{});
+							mui.fire(targetPage,"exit",{});
+						}
+					})
 				});
 				feedback.addEventListener('tap',function(){
 					mui.openWindow({
 						url:"feedback.html",
 						id:"feedback",
-						style:{
+						styles:{
+							top:"0px",
 							bottom:"50px"
+						},
+						show:{
+							aniShow:"fade-in",
+						},
+						extras:{
+							bname:"Me"
 						}
 					})
 				});
-				updateprofile.addEventListener('tap',function(){
+				aboutus.addEventListener('tap',function(){
 					mui.openWindow({
-						url:"updateProfile.html",
-						id:"updateProfile",
-						style:{
+						url:"aboutus.html",
+						id:"aboutus",
+						styles:{
+							top:"0px",
 							bottom:"50px"
+						},
+						show:{
+							aniShow:"fade-in",
+						},
+						extras:{
+							bname:"Me"
 						}
 					})
 				});
-				cv.addEventListener('tap',function(){
+				updateProfileLook.addEventListener('tap',function(){
 					mui.openWindow({
-						url:"cv.html",
-						id:"cv",
-						style:{
+						url:"updateProfileLook.html",
+						id:"updateProfileLook",
+						styles:{
+							top:"0px",
 							bottom:"50px"
+						},
+						show:{
+							aniShow:"fade-in",
+						},
+						extras:{
+							bname:"Me"
+						}
+					})
+				});
+				biography.addEventListener('tap',function(){
+					mui.openWindow({
+						url:"biography.html",
+						id:"biography",
+						styles:{
+							top:"0px",
+							bottom:"50px"
+						},
+						show:{
+							aniShow:"fade-in",
+						},
+						extras:{
+							bname:"Me"
 						}
 					})
 				});
 
+
 				contacts.addEventListener('tap',function(){
 					mui.openWindow({
-						url:"",
-						id:"",
-						style:{
+						url:"my-contact.html",
+						id:"my-contact",
+						styles:{
+							top:"0px",
 							bottom:"50px"
+						},
+						show:{
+							aniShow:"fade-in",
+						},
+						extras:{
+							uid:localStorage.getItem("TOKEN_UID"),
+							bname:"Me"
 						}
 					})
 				});
 
 				events.addEventListener('tap',function(){
 					mui.openWindow({
-						url:"",
-						id:"",
-						style:{
+						url:"Myevents-1.html",
+						id:"Myevents-1",
+						styles:{
+							top:"0px",
 							bottom:"50px"
+						},
+						show:{
+							aniShow:"fade-in",
+						},
+						extras:{
+							uid:localStorage.getItem("TOKEN_UID"),
+							bname:"Me"
 						}
 					})
 				});

@@ -12,31 +12,35 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left" style="display: none;">NAME</a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content" id="indexbody">
-			<form class="mui-input-row mui-input-group search">
+			<div class="mui-input-row mui-input-group search">
 				<div class="search-box mui-icon mui-icon-search">
-					<input type="search">
+					<input type="search" placeholder="Search Events" class="mui-input-clear" id="search_ipt">
+					<button class="dl-btn" id="go_search" id="go_search">Search</button>
+					<ul class="mui-table-view toggle" id="toggle">
+
+					</ul>
 				</div>
-			</form>
+			</div>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media app-list" id="happening">
 					<a href="javascript:;" class="mui-pull-left openLink" style="width: 26.666%; height: 100%;">
 						<img class="mui-pull-left" src="images/index-s1.jpg">
 					</a>
 					<div class="mui-media-body mui-pull-right" style="width: 73.334%;">
-						<div class="mui-slider">
-							<div class="mui-slider-group" id="slide-1">
-								<div class="mui-slider-item">
+						<div class="mui-slider" id="happening_s">
+							<div class="mui-slider-group" id="happening_i">
+								<div class="mui-slider-item" data-id="1">
 									<img src=""/>
 								</div>
-								<div class="mui-slider-item">
+								<div class="mui-slider-item" data-id="1">
 									<img src=""/>
 								</div>
-								<div class="mui-slider-item">
+								<div class="mui-slider-item" data-id="1">
 									<img src=""/>
 								</div>
 							</div>
@@ -46,14 +50,14 @@
 				<li class="mui-table-view-cell mui-media app-list" id="upcoming">
 					<div class="mui-media-body mui-pull-left" style="width: 73.334%;">
 						<div class="mui-slider">
-							<div class="mui-slider-group" id="slide-2">
-								<div class="mui-slider-item">
+							<div class="mui-slider-group" id="upcoming_i">
+								<div class="mui-slider-item" data-id="1.1">
 									<img src=""/>
 								</div>
-								<div class="mui-slider-item">
+								<div class="mui-slider-item" data-id="1">
 									<img src=""/>
 								</div>
-								<div class="mui-slider-item">
+								<div class="mui-slider-item" data-id="1">
 									<img src=""/>
 								</div>
 							</div>
@@ -69,14 +73,14 @@
 					</a>
 					<div class="mui-media-body mui-pull-right" style="width: 73.334%;">
 						<div class="mui-slider">
-							<div class="mui-slider-group" id="slide-3">
-								<div class="mui-slider-item">
+							<div class="mui-slider-group" id="past_i">
+								<div class="mui-slider-item" data-id="1.1">
 									<img src=""/>
 								</div>
-								<div class="mui-slider-item">
+								<div class="mui-slider-item" data-id="1">
 									<img src=""/>
 								</div>
-								<div class="mui-slider-item">
+								<div class="mui-slider-item" data-id="1">
 									<img src=""/>
 								</div>
 							</div>
@@ -85,6 +89,18 @@
 				</li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cell_height;
+			if(localStorage.getItem("cell_height")){
+				cell_height=localStorage.getItem("cell_height") + "px";
+			}else{
+				cell_height=(document.documentElement.clientHeight - 56 - 44) / 3 + "px";
+
+			};
+			document.getElementById("happening").style.height = cell_height;
+			document.getElementById("upcoming").style.height = cell_height;
+			document.getElementById("past").style.height = cell_height;
+		</script>
 		<script src="js/mui.min.js"></script>
 		<script src="lib/jquery-1.9.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>

@@ -2686,7 +2686,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 							//首次按键，提示‘再按一次退出应用’
 							if (!$.__back__first) {
 								$.__back__first = new Date().getTime();
-								mui.toast('再按一次退出应用');
+								mui.toast('Touch again will exit');
 								setTimeout(function() {
 									$.__back__first = null;
 								}, 2000);
@@ -3279,7 +3279,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 					auto: false,
 					contentinit: '上拉显示更多',
 					contentdown: '上拉显示更多',
-					contentrefresh: '正在加载...',
+					contentrefresh: 'loading...',
 					contentnomore: '没有更多数据了',
 					duration: 300
 				}

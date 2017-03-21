@@ -6,49 +6,149 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
 		<style type="text/css">
-			html,body{background: #e5e6e6;}
-			.mui-content{ background: #e5e6e6;}
-			.conference-content{ margin: 0 auto; width: 84.8%;}
-			.conference-content h2{ font-size: 16px; color: #000; margin: 0; padding: 10px 0; margin-top: 10%;}
-			.map-title{ background: #58bf92; border-top-left-radius: 8px;border-top-right-radius: 8px; height: 50px; line-height: 50px; padding-left:3%;}
-			.map-title img{ height: 70%; vertical-align: middle;}
-			.map-image img{ width: 100%; height: auto; vertical-align: middle;}
-			.map-footer{background: #58bf92; border-bottom-left-radius: 8px;border-bottom-right-radius: 8px; height: 50px; line-height: 50px;}
-			.btn-control{ position: relative; margin-top: 5%; height: 44px;}
-			.iconfont{ padding-top: 20px;}
-			.iconfont span{ font-family: "微软雅黑";}
-			.iconfont:before{ display: block; text-align: right; font-size: 20px !important; width: 24px; height: 24px; position: absolute; right: 0; top: 0; line-height: 24px; text-align: center;}
-			.map{ position: absolute; right: 5%;}
+			html,
+			body {
+				background: #e5e6e6;
+			}
+
+			.mui-content {
+				background: #e5e6e6;
+			}
+
+			.conference-content {
+				margin: 0 auto;
+				width: 84.8%;
+			}
+
+			.conference-content h2 {
+				font-size: 16px;
+				color: #000;
+				margin: 0;
+				padding: 10px 0;
+				margin-top: 10%;
+			}
+
+			.map-title {
+				background: #58bf92;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+				height: 50px;
+				line-height: 50px;
+				padding-left: 3%;
+			}
+
+			.map-title img {
+				height: 70%;
+				vertical-align: middle;
+			}
+
+			.map-image img {
+				width: 100%;
+				height: auto;
+				vertical-align: middle;
+			}
+
+			.map-footer {
+				background: #58bf92;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+				height: 50px;
+				line-height: 50px;
+			}
+
+			.btn-control {
+				position: relative;
+				margin-top: 5%;
+				height: 44px;
+			}
+
+			.iconfont {
+				padding-top: 20px;
+			}
+
+			.iconfont span {
+				font-family: "微软雅黑";
+			}
+
+			.iconfont:before {
+				display: block;
+				text-align: right;
+				font-size: 20px !important;
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				line-height: 24px;
+				text-align: center;
+			}
+			#layout{ width: 100%;}
+			.map {
+				position: absolute;
+				right: 5%;
+			}
 		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-		    <h1 class="mui-title"></h1>
-		    <span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+			<a id="bname" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
 			<div class="conference-content">
 				<h2>Conference theme</h2>
 				<div class="layout-map">
 					<div class="map-title"><img src="images/m.png"></div>
-					<div class="map-image">
-						<img src="images/layout.jpg" alt="" />
+					<div class="map-image" id="map-image">
+						<img src="images/blank.gif" alt="" id="layout" />
 					</div>
 					<div class="map-footer"></div>
 				</div>
 				<div class="btn-control">
-					<div class="iconfont icon-ditu map"><span>Map</span></div>
+					<div class="iconfont icon-ditu map" id="map"><span>Map</span></div>
 				</div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="js/public.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			var layout = document.getElementById("layout"),
+				map = document.getElementById("map");
+			var currentWindow;
+			mui.plusReady(function() {
+				currentWindow = plus.webview.currentWebview();
+				document.getElementById("bname").innerText = currentWindow.bname||"Back"
+				var result = JSON.parse( localStorage.getItem("data-"+currentWindow.aid) );
+				//alert(result.data.exhibition.layout.length)
+				//console.log(result.data.exhibition.layout)
+				if (result.data.exhibition.layout.length>10) {
+					layout.src = domain + result.data.exhibition.layout
+				}
+				
+				map.addEventListener("tap", function() {
+					mui.openWindow({
+						url: "map.html",
+						id: "map",						
+						styles: {
+							top: "0",
+							bottom: "50px"
+						},
+						show: {
+							aniShow: "fade-in",
+						},
+						extras: {
+							bname:"Layout", 
+							aid: currentWindow.aid
+						}
+					})
+				});
+			});
 		</script>
 	</body>
 

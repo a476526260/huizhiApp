@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link href="css/im-chat.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content"></div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		var uid = logined = localStorage.getItem("TOKEN_UID");
+		mui.plusReady(function() {
+			var curWindow = plus.webview.currentWebview();
+			var aid = curWindow.aid||0;
+			var to= curWindow.to||0 
+			var muiTitle=curWindow.muiTitle
+			mui.init({
+				subpages:[{
+					url:'pullrefresh_sub.html',
+					id:'pullrefresh_sub.html',
+					styles:{
+						top: '45px',
+						bottom: '0px',
+					},extras: {
+						aid:aid,
+						to:to,
+						curWindow:curWindow
+					}
+				}]
+			});
+			var maxMsgid=0,minMsgid = 0
+			var messageKeyword = ''
+			var uname = '',sender='zs'
+			var face_class = "";
+			//alert(curWindow.muiTitle)
+			if(parseInt(to) == parseInt(uid)){
+				mui.toast('cannt chat whith self!')
+				mui.back(-1)
+				return false;
+			}
+			if(curWindow.muiTitle && curWindow.muiTitle.length > 15){
+				var _uname = curWindow.muiTitle.split(" "),_muiTitle='',k=0
+				for(i=0;i<_uname.length;i++){
+					_muiTitle = _muiTitle+" " + _uname[i]
+					if(++k>=3){
+						break; 
+					}
+				}
+				muiTitle = _muiTitle+" " +"..."
+			}
+			document.getElementById("mui-title").innerText = muiTitle||''
+		})
+	</script>
+
+</html>

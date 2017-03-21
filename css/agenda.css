@@ -59,6 +59,7 @@ html{
 	height: 0.6rem;
 	background: #96e9c5;
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
 	position: absolute;
 	left: -0.5rem;
 	top: 50%;
@@ -98,6 +99,7 @@ html{
 	height: auto;
 	right: 0.27rem;
 	bottom: 0.37rem;
+	display: none;
 }
 .wirte-down img{
 	width: 100%;
@@ -114,13 +116,23 @@ html{
 	width: 90%;
 	margin:0 auto;
 	overflow: hidden;
+	text-align: center;
 	padding:0 0.35rem 0.35rem;
 }
 .btn-group button{
 	background: #58bf92;
 	border: none;
+	display: inline-block;
+	margin: auto;
 	font-size: 0.26rem;
-	width: 1.5rem;
+	width: 2.8rem;
+	left: 50%;
+	position: fixed;
+	bottom: 10px;
+	z-index: 333333;
+	margin-left: -1.25rem;
+	display: none;
+	
 }
 .sort{
 	font-size: 0.3rem;

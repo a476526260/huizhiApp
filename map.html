@@ -6,38 +6,149 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
-		<link rel="stylesheet" type="text/css" href="css/map.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/map.css" />
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
-			<div class="map-area"><img src="images/map.jpg"/></div>
+			<div class="map-area" id="map-canvas"><img src="images/loading.gif" /></div>
 			<div class="conference-info">
-				<h2 class="conference-name">conference name</h2>
+				<h2 class="conference-name" id="conference-name">conference name</h2>
 				<ul class="infor-box">
 					<li class="infor-item">
-						<div class="tit"><span class="iconfont icon-tel"></span>Add:</div>
-						<div class="txt">Guanghua Road, Chaoyang District, Beijing (Guanghua Road SOHO) Room 818, Second Unit</div>
+						<div class="tit mui-icon mui-icon-person">PD:</div>
+						<div class="txt" id="contact"></div>
 					</li>
 					<li class="infor-item">
-						<div class="tit"><span class="iconfont icon-location"></span>Tel:</div>
-						<div class="txt">010-89765543</div>
+						<div class="tit mui-icon mui-icon-location">Add:</div>
+						<div class="txt" id="address"></div>
+					</li>
+					<li class="infor-item">
+						<div class="tit mui-icon mui-icon-phone">Tel:</div>
+						<div class="txt" id="telNum"></div>
+					</li>
+					<li class="infor-item">
+						<div class="tit mui-icon mui-icon-email">Email:</div>
+						<div class="txt" id="Email"></div>
 					</li>
 				</ul>
-				<button type="button" class="mui-btn jump-btn">Jump to AutoNavi</button>
+				<button type="button" class="mui-btn jump-btn" id="btn">Jump to AutoNavi</button>
 			</div>
 		</div>
 
 		<script src="js/mui.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=dGiKVTFQXzGmBUPyhP0puHnEPZCfzoYU"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			var currentWindow;
+			var result,country;
+			var des,src
+			
+			mui.plusReady(function() {
+				currentWindow = plus.webview.currentWebview();
+				result = JSON.parse( localStorage.getItem("data-"+currentWindow.aid) );
+				document.getElementById("conference-name").innerText = result.data.exhibition.title
+				country = result.data.exhibition.country
+				document.getElementById("bname").innerText = currentWindow.bname||"" 
+				document.getElementById("contact").innerText= result.data.exhibition.contact
+				document.getElementById("telNum").innerText= result.data.exhibition.telphone
+				document.getElementById("address").innerText= result.data.exhibition.address
+				document.getElementById("Email").innerText= result.data.exhibition.email
+				//setTimeout(function(){
+					//mui.alert(result.data.exhibition.address)
+					var map = document.getElementById("map-area"),
+						conferenceName = document.getElementById("conference-name"),
+						address = document.getElementById("address"),
+						telNum = document.getElementById("telNum");
+					var btn = document.getElementById("btn");
+					if (result.data.exhibition.country == 'cn' || result.data.exhibition.country == 0) {
+						//天朝
+						
+							
+							var map = new BMap.Map("map-canvas");    // 创建Map实例
+							
+							plus.maps.Map.geocode(result.data.exhibition.address,{"city":" "},function(event){
+								des=event.coord;
+							    map.centerAndZoom(new BMap.Point(des.longitude,des.latitude),18);  // 初始化地图,设置中心点坐标和地图级别
+							    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+							    map.setCurrentCity("上海");          // 设置地图显示的城市 此项是必须设置的
+							    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+							    var marker = new BMap.Marker(new BMap.Point(des.longitude,des.latitude));  // 创建标注
+							    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+							    map.addOverlay(marker);               // 将标注添加到地图中
+							    
+								
+							    map.enableDragging(true);
+							
+							    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+							    var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+							
+							    map.addControl(top_left_control);
+							    map.addControl(top_left_navigation);
+								map.disableScrollWheelZoom();//禁用地图滚轮放大缩小，默认禁用(可不写)	
+								
+								
+							    //map.disableDragging();//禁用地图拖拽事件
+								btn.addEventListener("tap",function(){
+									plus.geolocation.getCurrentPosition(translatePoint_2,function(e){
+					                    mui.toast("异常:" + e.message);  
+					        		});
+									//navigateWithMap(des,"起点",src);
+								})
+								function translatePoint_2(position){
+									var currentLon = position.coords.longitude;
+								    var currentLat = position.coords.latitude;
+								    console.log("当前位置_2："+currentLon +","+currentLat);  
+									navigateWithMap(des,"起点",{"longitude":currentLon,"latitude":currentLat}); 
+								    
+								} 
+								function navigateWithMap(pos1,des,pos2){
+									// 设置目标位置坐标点和其实位置坐标点
+									var dst = new plus.maps.Point(pos1.longitude-0.0064,pos1.latitude-0.0055);
+									var src = new plus.maps.Point(pos2.longitude-0.0064,pos2.latitude-0.0055);
+									console.log("当前位置_3："+JSON.stringify(dst));  
+									console.log("当前位置_4："+JSON.stringify(src));  
+									// 调用系统地图显示
+									plus.maps.openSysMap( dst, des, src );
+								}
+							})
+							
+						
+							
+					} else{
+						//帝国
+						plus.geolocation.getCurrentPosition(translatePoint,function(e){
+		                    mui.toast("异常:" + e.message); 
+		        		});
+						function translatePoint(position){
+	    					var currentLon = position.coords.longitude;
+						    var currentLat = position.coords.latitude;
+						    console.log(position.address.country+country);
+						    if(position.address.country == '中国' && ( country == 'other' || country == 1 )){ 
+						    	//map.innerHTML('asdfasfd')
+						    	mui.alert("您当前所在地为中国,本活动在国外举办,您可能无法正常获取活动地图!")
+						    	document.getElementById("map-area").innerHTML = "<iframe src='https://www.google.com/maps/place/"+result.data.exhibition.address+"/' frameborder='0' style='width: 100%; min-height: 204px; height: 100%;'></iframe>"
+						    }
+						    //{"coordsType":"wgs84","address":{"district":"虹口区","country":"中国","province":"上海市","city":"上海市","street":"中山北一路121A1"},"addresses":"上海科学节能展示馆","coords":{"latitude":31.2739617847013,"longitude":121.4712400914995,"accuracy":65,"altitude":12.17057704925537,"heading":null,"speed":null,"altitudeAccuracy":10},"timestamp":1496231967391.074}
+	
+							//逻辑 
+						} 
+					}
+	
+	
+				//},600)
+				
+			});
+			
+			
 		</script>
 	</body>
 

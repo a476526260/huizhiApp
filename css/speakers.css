@@ -1,21 +1,60 @@
 html,body{ background: #E6E6E6;}
 .mui-content {
 	background: #e5e6e6;
+	padding-bottom: 0.34rem;
 }
 .speaker-basic-infor{ background: #58bf92; padding: 0.5rem 0;}
-.speaker-basic-infor .speaker-photo{ margin: 0 auto; width: 3rem; height: 3rem; box-sizing: border-box; padding: 0.15rem; background: #98d7bb; border-radius: 50%;}
-.speaker-basic-infor .speaker-photo img{ width: 100%; height: 100%; border-radius: 50%;}
+.speaker-basic-infor .speaker-photo{ margin: 0 auto; width: 3rem; height: 3rem; box-sizing: border-box;  background: #98d7bb; border-radius: 50%;-webkit-border-radius: 50%; overflow: hidden;}
+.speaker-basic-infor .speaker-photo img{ width: 100%; height: 100%; border-radius: 50%; -webkit-border-radius: 50px;}
 .speaker-basic-infor .speaker-name{ text-align: center; color: #fff; font-size: 0.54rem; line-height: 0.7rem; margin-top: 0.2rem;}
 .speaker-basic-infor .speaker-other{ text-align: center; font-size: 0.28rem; color: #036d4b;}
-.speaker-detail-infor{ width: 94%; margin:0 auto; border-radius: 12px; background: #fcfcfc; margin-top: 18px;}
-.speaker-detail-infor .title{ border-top-left-radius: 12px; border-top-right-radius: 12px; background: #58BF92; overflow: hidden; padding: 0.2rem 0;}
-.speaker-detail-infor .title .title-left{ float: left; color: #fff; font-size: 0.28rem; line-height: 0.6rem; position: relative; text-indent: 0.7rem; padding: 0 0.15rem;}
-.speaker-detail-infor .title .title-left:before{ content: ""; display: block; width: 0.6rem; height: 0.6rem; border: 1px solid #fff; border-radius: 50%; position: absolute; background: url(../images/speaker-title.png) center no-repeat; background-size:65% 65%;}
-.company .company-title{ overflow: hidden; font-size: 0.28rem; color: #58bf92; line-height: 0.6rem; position: relative; text-indent: 0.7rem; padding: 0.2rem 0.15rem; border-bottom: 1px solid #e6e6e6;}
-.company .company-title:before{ content: ""; display: block; width: 0.6rem; height: 0.6rem; border: 1px solid #58bf92; border-radius: 50%; position: absolute; background: url(../images/speaker-company.png) center no-repeat; background-size:65% 65%;}
-.company .company-title span{ display: block; text-indent: 0; margin-left: 0.8rem; float: right;}
-.company .company-introduce{ font-size: 0.24rem; color: #515151; padding: 0.2rem 0.15rem 0.4rem;}
-.send-message{ width: 84%; display: block; background: #58bf92; margin: 0 auto; font-size: 0.24rem; color: #fff; margin-top: 0.34rem;}
+.speaker-detail-infor{ width: 94%; margin:0 auto; border-radius: 12px; -webkit-border-radius: 12px;background: #fcfcfc; margin-top: 18px;}
 
-.speaker-detail-infor .title .title-right{ float: left; border-left: 1px solid #fff; padding-left: 10px;}
-.speaker-detail-infor .title .title-right p{ font-size: 0.24rem; color: #fff; margin: 0; line-height: 0.6rem;}
+.speaker-detail-infor .title{ border-top-left-radius: 12px; border-top-right-radius: 12px; background: #58BF92; overflow: hidden; padding: 0.2rem 0; position: relative;}
+.speaker-detail-infor .title .title-left{ float: left; color: #fff; font-size: 0.28rem; line-height: 0.6rem; text-indent: 0.7rem; padding: 0 0.15rem; border-right: 1px solid #fff;width: 35%; position: absolute; top: 50%; margin-top: -0.3rem;}
+.speaker-detail-infor .title .title-left:before{ content: ""; display: block; width: 0.6rem; height: 0.6rem; border: 1px solid #fff; border-radius: 50%; -webkit-border-radius: 50%;position: absolute; background: url(../images/speaker-title.png) center no-repeat; background-size:65% 65%;}
+
+
+.speaker-detail-infor .contact{ border-top-left-radius: 12px; border-top-right-radius: 12px; background: #fff; overflow: hidden; padding: 0.2rem 0;position: relative;}
+.speaker-detail-infor .contact .title-left{ float: left; color: #58BF92; font-size: 0.28rem; line-height: 0.6rem; position: absolute;top: 50%;margin-top: -0.3rem; text-indent: 0.7rem; padding: 0 0.15rem; border-right: 1px solid #58BF92; width: 35%;}
+.speaker-detail-infor .contact .title-left:before{ content: ""; display: block; width: 0.6rem; height: 0.6rem; border: 1px solid #58BF92; border-radius: 50%; -webkit-border-radius: 50%;position: absolute; background: url(../images/speaker-company.png) center no-repeat; background-size:65% 65%;}
+.speaker-detail-infor .contact .title-right p{ font-size: 0.24rem; color: #58BF92; margin: 0; line-height: 0.3rem; /*position: absolute;*/ left: 3%; /*top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%);*/}
+
+
+
+
+.company .company-title{ overflow: hidden; font-size: 0.28rem; color: #58bf92; line-height: 0.6rem; position: relative; text-indent: 0.7rem; padding: 0.2rem 0.15rem; border-bottom: 1px solid #e6e6e6;}
+.company .company-title:before{ content: ""; display: block; width: 0.6rem; height: 0.6rem; border: 1px solid #58bf92; border-radius: 50%; -webkit-border-radius: 50%;position: absolute; background: url(../images/speaker-company.png) center no-repeat; background-size:65% 65%;}
+.company .company-title span{ display: block; text-indent: 0; margin-left: 0.8rem; float: right; height: 0.6rem; line-height: 0.6rem;}
+.company .company-introduce{ font-size: 0.24rem; color: #515151; padding: 0.2rem 0.15rem 0.4rem; text-align: justify;}
+.send-message{ width: 84%; display: block; background: #58bf92; margin: 0 auto; font-size: 0.24rem; color: #fff; margin: 0.34rem auto 0;}
+
+.speaker-detail-infor .title .title-right,.contact .title-right{ float: right; width: 65%; padding-left: 3%; position: relative; min-height: 0.6rem;/*border-left: 1px solid #fff;*/display: table;}
+.speaker-detail-infor .title .title-right p{ font-size: 0.24rem; color: #fff; margin: 0; line-height: 0.3rem; position: inherit; left: 0%;/* top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%);*/ display: table-cell; vertical-align: middle;}
+#downMask{ position: fixed; width: 100%; height: 100%;  background: rgba(0,0,0,0.6); top: 0; left: 0; z-index: 999999; display: none ;}
+#downMask span{position: absolute;top: 50%;left: 50%; margin:-0.5rem 0 0 -0.5rem;color: #fff;font-size: 1rem !important;
+-webkit-animation: cycle 5s infinite linear;-moz-animation: cycle 5s infinite linear;-o-animation: cycle 5s infinite linear;-ms-animation: cycle 5s infinite linear;animation:cycle 5s infinite linear;
+} 
+#dp{ position: fixed; top: 60%; z-index: 33333333; height: 10px; width: 80%; left: 10%;display: none;}
+#progressbar{top: 55%; width: 80%; left: 10%; height: 10px;}
+/*旋转*/
+@-webkit-keyframes cycle {
+    0% {-webkit-transform:rotate(0deg);;}
+    50% {-webkit-transform: rotate(180deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+@keyframes cycle {
+    0% { transform:rotate(0deg);}
+    50% { transform:rotate(180deg);}
+    100% {transform:rotate(360deg);}
+}
+@-moz-keyframes cycle {
+    0% {-webkit-transform:rotate(0deg);;}
+    50% {-webkit-transform:rotate(180deg);}
+    100% {-webkit-transform:rotate(360deg);}
+}
+@-o-keyframes cycle {
+    0% { transform: rotate(0deg);;}
+    50% { transform:rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}

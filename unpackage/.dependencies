@@ -1,1 +1,83 @@
-null
+{
+  "reset.html": {
+    "href": "reset.html",
+    "resources": [],
+    "refer": [
+      "signIn.html"
+    ],
+    "priority": 0
+  },
+  "networkingBio.html": {
+    "href": "networkingBio.html",
+    "resources": [
+      "images/happening.png",
+      "images/upcoming.png",
+      "images/past.png",
+      "images/cv-icon.jpg"
+    ],
+    "refer": [],
+    "priority": 4
+  },
+  "my-contact.html": {
+    "href": "my-contact.html",
+    "resources": [],
+    "refer": [
+      "networkingBio.html"
+    ],
+    "priority": 3
+  },
+  "im-chat.html": {
+    "href": "im-chat.html",
+    "resources": [],
+    "refer": [
+      "me-myevent.html"
+    ],
+    "priority": 3
+  },
+  "me-myevent.html": {
+    "href": "me-myevent.html",
+    "resources": [],
+    "refer": [
+      "happening.html",
+      "networkingBio.html"
+    ],
+    "priority": 2
+  },
+  "register_2.html": {
+    "href": "register_2.html",
+    "resources": [
+      "images/companyLogo.png"
+    ],
+    "refer": [],
+    "priority": 4
+  },
+  "signIn.html": {
+    "href": "signIn.html",
+    "resources": [],
+    "refer": [
+      "indexbody.html"
+    ],
+    "priority": 0
+  },
+  "changePassword.html": {
+    "href": "changePassword.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/public.css",
+      "images/happening.png",
+      "images/upcoming.png",
+      "images/past.png",
+      "js/mui.min.js",
+      "lib/jquery-1.7.2.min.js",
+      "js/public.js",
+      "images/logo.png",
+      "images/blank.gif",
+      "images/icon-c.png"
+    ],
+    "refer": [
+      "me-myevent.html"
+    ],
+    "priority": 8
+  }
+}

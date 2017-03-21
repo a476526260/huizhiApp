@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/list2.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
+			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider" style="background: #fff;">
+				
+				<div class="conference-status">
+					<ul>
+						<li class="mui-active" id="keyid">Serach:</li>
+						
+					</ul>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" data-type="happening" style="min-height:200px;">
+						<div class="outer">
+							<div class="pullUpDown">
+								<ul class="mui-table-view" id="happening_s">
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<script src="js/mui.js"></script>
+		<script src="js/mui.pullToRefresh.js"></script>
+		<script src="lib/jquery-1.7.2.min.js"></script>
+		<script src="js/public.js"></script>
+		<script src="js/search.js"></script>
+		<script type="text/javascript"> 
+			var list_height;
+			if(localStorage.getItem("list_height") && localStorage.getItem("list_height")!='NaN'){
+				console.log(localStorage.getItem("list_height")+"dd")
+				list_height=(parseInt(localStorage.getItem("list_height")) - 86 - 47) + "px";
+			}else{
+				localStorage.setItem("list_height",document.documentElement.clientHeight)
+				list_height=(document.documentElement.clientHeight -86 - 47)+ "px";
+				console.log(document.documentElement.clientHeight+"eee")  
+			};
+			document.getElementById("item1mobile").style.minHeight = list_height
+			//document.getElementById("item2mobile").style.minHeight = list_height
+			//document.getElementById("item3mobile").style.minHeight = list_height
+			//$(".mui-control-content").css("min-height", $(window).outerHeight() - $(".conference-status").innerHeight() - $("#sliderSegmentedControl").innerHeight());
+		</script>
+	</body>
+</html>

@@ -1,17 +1,20 @@
 ﻿<!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>首页</title>
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
 		<link rel="stylesheet" type="text/css" href="css/public.css" />
 		<style type="text/css">
-			html,body{
+			html,
+			body {
 				font-size: 16px !important;
 			}
 		</style>
+
 	</head>
 
 	<body>
@@ -28,10 +31,10 @@
 					<span class="mui-tab-label">My Events</span>
 				</div>
 			</a>
-			<a class="mui-tab-item" href="groupChat">
+			<a class="mui-tab-item" href="me-myevent" id="reload">
 				<div class="icon-area">
 					<span class="mui-icon iconfont icon-yuyin">
-						<span class="mui-badge mui-badge-div">2</span>
+						<span class="mui-badge mui-badge-div" id="message-num" style="display:none ;">2</span>
 					</span>
 					<span class="mui-tab-label">Message</span>
 				</div>
@@ -39,17 +42,24 @@
 			<a class="mui-tab-item" href="signIn" id="defaultTab">
 				<div class="icon-area">
 					<span class="mui-icon iconfont icon-wo">
-						<span class="new-circle"></span>
+						<!--<span class="new-circle"></span>-->
 					</span>
 					<span class="mui-tab-label">Me</span>
 				</div>
 			</a>
 		</nav>
-
+		<script type="text/javascript">
+			var cell_height = (document.documentElement.clientHeight  - 50 - 56 - 44) / 3 // (document.documentElement.clientHeight - 50 - 56 - 44) / 3;
+			localStorage.setItem("cell_height", cell_height);
+			localStorage.setItem("list_height", window.screen.clientHeight - 50 - 44);
+			//alert(window.screen.height +"//"+ document.documentElement.clientHeight)
+			//localStorage.getItem("cell_height")
+		</script>
 		<script src="js/mui.min.js"></script>
 		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+
 	</body>
 
 </html>

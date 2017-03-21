@@ -12,28 +12,46 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 		<div class="mui-content">
 			<div class="profile-box">
-				<div class="profile-banner"><img src="images/profile-banner.jpg"/></div>
+				<div class="profile-banner"><img src="images/blank.gif" id="banner"/></div>
 				<div class="company-infors">
-					<h2 class="company-name">Your Company Name</h2>
-					<p class="company-detail">XXXXX limited company of science and technology, is the leading provider of Internet and mobile phone China security products and services provider. According to third statistics, calculated according to the number of users, the 360 is the first major Internet security company China, 600 million users, 96.6% market penetration Chinese; first, the top three global mobile internet security company, the number of nearly 800 million users, the market penetration of nearly 70%......</p>
-					<div class="contact">
+					<h2 class="company-name" id="name"></h2>
+					<p class="company-detail" id="detail"></p>
+					<div class="contact" style="display: none;">
 						<h6>Contact</h6>
-						<p>010-6687546 ,010-6687547</p>
+						<p id="tel"></p>
 					</div>
-					<div class="tip">Something Important Here</div>
+					<div class="tip"></div>
 				</div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="js/public.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			var ui={
+				"banner":document.getElementById("banner"),
+				"name":document.getElementById("name"),
+				"detail":document.getElementById("detail"),
+				"tel":document.getElementById("tel"),
+			}
+			mui.plusReady(function(){
+				var currentWindow=plus.webview.currentWebview();
+				document.getElementById("bname").innerText=currentWindow.bname
+				var bannerPath=currentWindow.companyBanner,
+					name=currentWindow.companyName,
+					content=currentWindow.companyContent,
+					tel=currentWindow.companyTel;
+				ui.banner.setAttribute("src",bannerPath);
+				ui.name.innerHTML=name;
+				ui.detail.innerHTML=content;
+				ui.tel.innerHTML=tel
+			});
 		</script>
 	</body>
-
 </html>

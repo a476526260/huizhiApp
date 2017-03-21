@@ -9,49 +9,37 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/dropload.css"/>
 		<link rel="stylesheet" type="text/css" href="css/networing.css"/>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left">NAME</a>
-			<h1 class="mui-title"></h1>
+			<a id="bname" class="mui-action-back mui-icon mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="mui-title"></h1>
 			<span class="app-logo mui-pull-right"><img src="images/logo.png"></span>
 		</header>
 
 		<div class="mui-content">
-			<form class="mui-input-row mui-input-group search">
+			<div class="mui-input-row mui-input-group search">
 				<div class="search-box mui-icon mui-icon-search">
-					<input type="search">
+					<input type="search" id="search_ipt" class="mui-input-clear">
 				</div>
-			</form>
+			</div>
 			<div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a class="mui-control-item active" href="#item1mobile">Speakers</a>
-					<a class="mui-control-item" href="#item2mobile">Delegates</a>
-					<a class="mui-control-item" href="#item3mobile">Attendees</a>
+					<a class="mui-control-item active" href="#item1mobile">All Attendees</a>
+					<a class="mui-control-item" href="#item2mobile">Speakers</a>
 				</div>
 				<div class="sort-way">
 					<span class="mui-icon iconfont icon-th-large-copy"></span>
 					<span class="mui-icon iconfont icon-fenlei"></span>
 				</div>
-				<div class="mui-slider-group">
-					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+				<div class="mui-slider-group" id="lists">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" >
 						<div id="scroll1" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
-								<ul class="mui-table-view block-style">
-								    <!--<li class="mui-table-view-cell mui-media">
-								        <a href="javascript:;">
-								            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-								            <div class="mui-media-body">
-								                <p class="name">NAME1</p>
-								                <p class="job">ceo</p>
-								                <p class="company">Long company name </p>
-								                <span class="chat"></span>
-								                <span class="heart"></span>
-								            </div>
-								        </a>
-								    </li>-->
+							<div class="mui-scroll" > 
+								<ul class="mui-table-view list-style ">
 								</ul>
 							</div>
 						</div>
@@ -59,29 +47,22 @@
 					<div id="item2mobile" class="mui-slider-item mui-control-content">
 						<div id="scroll2" class="mui-scroll-wrapper">
 							<div class="mui-scroll">
-								<ul class="mui-table-view block-style">
+								<ul class="mui-table-view list-style">
 
 								</ul>
 							</div>
 						</div>
 					</div>
-					<div id="item3mobile" class="mui-slider-item mui-control-content">
-						<div id="scroll3" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
-								<ul class="mui-table-view block-style">
-
-								</ul>
-							</div>
-						</div>
-
-					</div>
+					
 				</div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
-		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/dropload.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/networking.js" type="text/javascript" charset="utf-8"></script>
+
 	</body>
 
 </html>
